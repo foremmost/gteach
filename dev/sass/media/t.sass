@@ -1,0 +1,745 @@
+.section
+	+w($tablet)
+	padding: 0
+	margin: 0 auto
+	&>.section-header .section-buttons
+		width: initial
+		margin-top: 0
+	&-buttons
+		width: 100%
+		margin-top: 12px
+	&-button
+		margin: 10px 20px 0 0
+.section,.block-filter
+	&-buttons
+		flex-direction: row
+.block-filter
+	margin-bottom: 32px
+	padding-bottom: 18px
+	display: flex
+	align-items: center
+	flex-wrap: wrap
+	position: relative
+	&:after
+		+af
+		+wh(100%,1px)
+		background-color: rgb($neutral-200)
+		position: absolute
+		left: 0
+		bottom: 0
+	&-buttons
+		width: 100%
+		margin: 24px 0 0
+	&-button
+		margin-right: 10px
+		margin-bottom: 0
+		padding: 0 10px
+		position: relative
+		&:last-child
+			margin-right: 0
+		&:after
+			+af
+			+wh(100%,1px)
+			position: absolute
+			left: 0
+			bottom: -20px
+			z-index: 1
+		&.active
+			&:after
+				background-color: rgb($blue)
+.row
+	padding-top: 24px
+	display: flex
+	justify-content: space-between
+	align-items: flex-start
+	&.full
+		align-items: stretch
+	.block
+		margin-top: 0
+		//height: 100%
+
+.col
+	margin-left: 12px
+	width: 100%
+	&:first-child
+		margin-left: 0
+	&.t50
+		max-width: calc(50% - 12px)
+	&.t260
+		max-width: 260px
+	&.t456
+		max-width: 456px
+	&.t358
+		max-width: 358px
+.block
+	margin-top: 24px
+	padding: 30px
+	&-main
+		&-title
+			font-size: $fz28
+		&-subtitle
+			font-size: $fz16
+	&-title
+		&:not(:last-child)
+			margin-bottom: 0
+		&-control
+			min-height: 34px
+			.block-title
+				width: initial
+				margin-right: auto
+			.button
+				margin-right: 16px
+		&-left
+			margin-right: auto
+	&-header
+		flex-direction: row
+		flex-wrap: wrap
+		align-items: center
+		justify-content: space-between
+		&-item
+			width: calc(50% - 10px)
+			height: 34px
+	.test
+		&-header
+			padding-bottom: 20px
+
+
+
+.parent
+	&-adding
+		&-inner
+			.test-footer
+				.button
+					&,&-blue
+						min-width: 120px
+					&.back
+						margin-right: auto
+	.subnavigate
+		&-button
+			margin-right: 24px
+
+
+.filter
+	flex-direction: row
+	flex-wrap: wrap
+	align-items: center
+	justify-content: space-between
+
+.pagination
+	flex-direction: row
+	justify-content: space-between
+	&-info
+		margin-bottom: 0
+		margin-right: 16px
+	&-end
+		margin-left: 32px
+		margin-top: 0
+	&-top
+		justify-content: flex-start
+
+
+.head
+	&-logo
+		max-width: initial
+	&-button,&-select-block
+		margin-right: 24px
+	&-user
+		+wh(40px)
+	&-select
+		+wh(80px,40px)
+		&-block
+			display: flex
+			align-items: center
+			span
+				margin-right: 8px
+
+
+.navigate
+	&-item
+		width: calc(100% / 3)
+
+.subnavigate
+	.section
+		display: flex
+		flex-wrap: wrap
+
+.student
+	&-main
+		padding-right: 50%
+		background-image: url(img/multitasking.png)
+		background-size: auto 100%
+		background-position: calc(100% - 30px) 50%
+		background-repeat: no-repeat
+	&-profile
+		&-actions
+			margin-left: auto
+		&-actions,&-footer
+			flex-wrap: nowrap
+			button
+				width: initial
+		&-plan
+			&-edit
+				position: absolute
+				top: 16px
+				right: 16px
+
+
+.notifications
+	&-list
+		&-title
+			&-row
+				display: flex
+				align-items: flex-start
+				justify-content: space-between
+		&-titles
+			margin-top: 6px
+			display: flex
+			align-items: center
+			&-item
+				width: 106px
+				flex: 0 0 106px
+				text-align: center
+				font: 15px $f_bold
+				color: #7E8299
+				&:last-child
+					margin-right: -30px
+		&-item
+			flex-wrap: nowrap
+			&-label
+				width: 106px
+				flex: 0 0 106px
+				flex-direction: row
+				justify-content: center
+				&:last-child
+					margin-right: -30px
+				&-title
+					display: none
+	&-navigate
+		&-list
+			display: flex
+			align-items: center
+			justify-content: space-between
+		&-item
+			margin-bottom: 0
+
+
+.upcoming
+	&-item
+		flex-direction: row
+		align-items: center
+	&-center
+		margin: 0 0 0 auto
+	&-right
+		margin-left: 44px
+
+
+.frequently
+	&-row
+		justify-content: space-between
+
+
+.test
+	&-scores
+		&-item
+			width: calc((100% - 60px) / 4)
+			flex-basis: calc((100% - 60px) / 4)
+			margin-bottom: 0
+		.table
+			white-space: nowrap
+	&-header
+		flex-wrap: nowrap
+		&-button
+			margin-left: 24px
+	&-timer
+		margin-bottom: 0
+	&-footer
+		flex-direction: row
+		align-items: center
+		justify-content: flex-end
+		&-button,&-back,.button,.button-blue,.pagination
+			width: initial
+			margin-bottom: 0
+		.pagination
+			margin-right: 24px
+		.button,.button-blue,&-back
+			margin-right: 24px
+			&:last-child
+				margin-right: 0
+		&-button
+			padding: 12px 20px
+			margin-right: auto
+	&-inner
+		padding: 32px 10px 0 0
+	&-left
+		&-text
+			font-size: $fz16
+	&-result
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		&-block
+			flex: 0 0 calc((100% - 48px) / 3)
+			margin-bottom: 24px
+			&:nth-child(4),&:nth-child(5),&.half
+				flex-basis: calc(50% - 12px)
+			&.full
+				flex-basis: 100%
+	&-label
+		&-title
+			margin-bottom: 20px
+	&-pick
+		&-item
+			flex-wrap: nowrap
+			.button
+				width: initial
+				margin: 0 0 0 auto
+		&-desc
+			width: initial
+	&-results
+		padding-top: 24px
+		display: flex
+		align-items: stretch
+		.total
+			width: 100%
+			max-width: 240px
+			margin-right: 24px
+		&-list
+			width: 100%
+		&-item
+			&:first-child
+				margin-top: 0
+		&-reset
+			margin-top: 56px
+			.button
+				padding: 12px 20px
+
+
+
+.skill
+	&-level
+		&-item
+			margin-bottom: 0
+			flex-basis: initial
+
+
+.skills
+	&-level
+		&-title
+			margin-top: 40px
+		&-list
+			.skills-level-item
+				width: 50%
+
+
+.essay
+	&-result
+		&-loader
+			.loader
+				&-title
+					font-size: $fz30
+					line-height: calc(39em / 14)
+				&-subtitle
+					font-size: $fz22
+				&-progress
+					&-title
+						font-size: $fz15
+					&-percent
+						font-size: $fz25
+
+
+.achievements
+	&-item
+		width: 64px
+		margin-right: 20px
+		margin-bottom: 0
+		&:nth-child(3n)
+			margin-right: 20px
+
+
+.stars
+	&-row
+		display: flex
+		align-items: flex-start
+		.stars
+			&-info
+				margin-left: 48px
+			&-circle
+				margin: 0
+
+
+.circle
+	+wh(310px)
+	&>svg
+		+wh(310px)
+	circle
+		r: 134
+
+
+.stats
+	.stars
+		&-info
+			&-item
+				margin-bottom: 24px
+				&:last-child
+					margin-bottom: 0
+			&-text
+				strong
+					font-size: $fz18
+					line-height: $fz24
+	.circle
+		margin: 40px auto
+
+
+.questions
+	&-item
+		width: 17%
+
+
+.modal
+	+w(calc($tablet - 70px))
+	&.finish
+		width: 744px
+	&.report,&.note
+		width: 438px
+	&.narrow
+		width: 540px
+	&-title
+		font-size: $fz18
+	&-row
+		flex-direction: row
+		.button,.button-blue
+			width: initial
+			margin-bottom: 0
+			margin-right: 16px
+			&:last-child
+				margin-right: 0
+	iframe
+		height: 310px
+	&-blue
+		&:after
+			top: 85px
+
+
+.login
+	overflow: hidden
+	&-subtitle
+		font-size: calc(18em/14)
+	&-right
+		width: 100%
+	&-span
+		font-size: calc(18em/14)
+	&-row
+		width: 100%
+		max-width: 480px
+		display: flex
+		.form-block
+			margin-right: 32px
+			min-width: initial
+			&:last-child
+				margin-right: 0
+	&-success
+		&-img
+			position: relative
+			z-index: 1
+		&-bgc
+			width: 100%
+			display: block
+			position: absolute
+			img
+				position: absolute
+				bottom: 0
+				&:nth-child(2)
+					left: -100px
+				&:nth-child(3)
+					left: -100px
+				&:nth-child(7)
+					bottom: -24px
+					right: 10%
+				&:nth-child(8)
+					right: 10%
+					bottom: 210px
+				&:nth-child(9)
+					right: -210px
+		.button-blue
+			margin-bottom: 0
+		.login
+			&-main
+				&-title,&-subtitle
+					margin-bottom: 16px
+	&-left,&-success
+		&-img
+			margin-top: 15vh
+
+
+.essay
+	&-textarea
+		font-size: $fz16
+		line-height: $fz24
+
+
+.form
+	&-block
+		width: 100%
+		min-width: 380px
+		max-width: 480px
+
+
+.practice
+	&-schedule
+		&-row
+			flex-wrap: nowrap
+		&-title
+			width: initial
+			white-space: nowrap
+		&-date
+			max-width: 395px
+			margin: 0 0 0 20px
+		&-dots
+			width: 100%
+			height: 15px
+			margin: 0 5px
+			border-bottom: 2px dotted
+	&-task
+		&-list
+			padding-top: 16px
+		&-item
+			min-height: 80px
+			margin-top: 20px
+			padding: 16px
+			flex-wrap: nowrap
+			&-title
+				width: initial
+				margin-bottom: 0
+				margin-right: auto
+			&-actions
+				margin-left: 20px
+	&-table
+		&-head
+			display: flex
+			align-items: center
+			padding: 16px 0 12px
+			.level
+				flex: 0 0 58px
+		&-head .accuracy,&-row .progress
+				flex: 0 0 100px
+		&-row
+			flex-direction: row
+			align-items: center
+			.info
+				margin-bottom: 0
+				margin-right: auto
+			.subtitle
+				text-align: left
+			.button,.video span
+				white-space: nowrap
+			.onMobile
+				display: none
+			.text
+				margin-bottom: 0
+		&-head,&-row
+			&-title,&-subtitle
+				width: 100%
+			.time,.questions_count
+				text-align: center
+			.time
+				flex: 0 0 80px
+			.questions_count
+				flex: 0 0 150px
+	&-achievement
+		&-title
+			text-align: left
+		&-item
+			align-items: stretch
+	&-reports
+		&-table
+			&-title,&-subtitle
+				text-align: left
+		&-summary
+			flex-direction: row
+			&-item
+				width: 100%
+				margin-bottom: 0
+				margin-right: 20px
+				&:last-child
+					margin-right: 0
+
+
+.remove-btn
+	width: 42px
+	flex: 0 0 42px
+	margin-top: 0
+	margin-left: 20px
+	background-color: initial
+	span
+		display: none
+	svg
+		fill: rgb($neutral-400)
+		display: block
+		
+		
+.profile
+	&-block
+		padding: 0
+		.test
+			&-title
+				padding: 20px 0 0 20px
+			&-footer
+				padding: 20px
+	&-inner
+		max-width: 647px
+	&-form
+		.form-label
+			font-size: 15px
+			&.profile-form-title
+				font-size: 16px
+		&-row
+			display: flex
+			align-items: center
+			margin-bottom: 20px
+			.form-label-row
+				+w(165px)
+				flex: 0 0 165px
+				padding-bottom: 0
+			.g-form-item
+				+w(100%)
+
+
+.adding
+	&-inner
+		+w(650px)
+	&-plan
+		&-row
+			display: flex
+			column-gap: 20px
+	&-button
+		margin-bottom: 0
+
+.adding,.level
+	&-buttons
+		flex-wrap: nowrap
+
+
+.watch
+	&-table
+		&-cont
+			margin: 40px 0
+
+
+.comGraph
+	&-row
+		margin-bottom: 40px
+	&-circle
+		&-row
+			display: flex
+			align-items: center
+		&-info
+			margin-left: 29px
+
+
+.marker
+	&-info
+		&-row
+			margin-bottom: 12px
+			&:last-child
+				margin-bottom: 0
+
+
+.plansBlock
+	&-info
+		margin-bottom: 16px
+	&-reasons
+		margin-bottom: 40px
+
+
+.perItemBlock
+	margin-bottom: 40px
+	&-list
+		width: 100%
+	.marker-info-row
+		width: 100%
+
+
+.revenue
+	&-graphic
+		margin-bottom: 40px
+
+
+.avatars
+	max-width: 770px
+	padding: 24px
+	&-item
+		flex-basis: calc((100% - 60px) / 7)
+		width: calc((100% - 60px) / 7)
+
+
+.courses
+	&-block
+		&-header
+			.item,button
+				width: calc(50% - 10px)
+			display: flex
+			flex-wrap: wrap
+			justify-content: space-between
+
+
+.uploadFile
+	&-body
+		display: flex
+		flex-direction: column
+		align-items: center
+
+
+.activity
+	&-header
+		&-block
+			width: 50%
+	.details
+		&-header
+			&-list
+				display: flex
+				flex-wrap: wrap
+			&-item
+				width: calc(50% - 5px)
+				&:nth-child(2n - 1)
+					margin-right: 10px
+		&-item
+			&-achieve
+				display: flex
+				align-items: flex-start
+				flex-wrap: wrap
+				&-info
+					margin-right: 16px
+					margin-bottom: 0
+				&-title
+					width: 100%
+				&-icon + div
+					width: 88px
+
+
+.addCard
+	&-footer
+		flex-wrap: nowrap
+		button
+			width: initial
+
+
+.billing
+	&-item
+		&-body
+			flex-wrap: nowrap
+			align-items: flex-start
+		&-info
+			width: 100%
+			margin-bottom: 0
+			line-height: 22px
+		&-card
+			display: flex
+			align-items: center
+			&-img
+				margin-bottom: 0
+				margin-right: 12px
+		&-actions
+			flex-wrap: nowrap
+			justify-content: flex-end
+			button
+				width: initial

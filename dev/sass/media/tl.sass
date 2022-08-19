@@ -1,0 +1,330 @@
+.modal
+	+w(calc($tablet-large - 70px))
+.section
+	+w($tablet-large)
+	&-button
+		font-family: $p_semi
+.col
+	&.tl716
+		max-width: 716px
+.block
+	padding: 24px 32px
+	&-filter
+		margin-bottom: 24px
+		flex-wrap: nowrap
+		&-buttons
+			width: initial
+			margin-top: 0
+		&-button
+			margin-right: 22px
+	&-header
+		&-item
+			width: calc(25% - 15px)
+
+g-modaler
+	.block
+		padding: 28px 32px
+	.adding-block
+		padding: 28px 0 0
+	.addCard
+		padding: 28px 156px
+	.button,.button-blue
+		padding: 12px 12px
+
+.main-title
+	font-size: $fz32
+
+.navigate
+	&-list
+		padding: 12px 12px 0
+		justify-content: flex-start
+		position: relative
+	&-item
+		width: initial
+		padding: 18px 20px
+		font-size: $fz16
+		line-height: initial
+		position: relative
+		z-index: 1
+		span
+			position: relative
+		&.active
+			background: none
+			color: rgb($neutral-800)
+	&-label
+		width: 0
+		height: 61px
+		display: block
+		border-radius: 12px 12px 0 0
+		background-color: rgb($white)
+		position: absolute
+		left: 0
+		bottom: 0
+		&-left,&-right
+			+wh(20px,100%)
+			background-color: rgb($white)
+			position: absolute
+			&:before
+				+af
+				+wh(20px,100%)
+				background-color: rgb($blue)
+				position: absolute
+				bottom: 0
+		&-left
+			left: -20px
+			&:before
+				border-bottom-right-radius: 12px
+		&-right
+			right: -20px
+			&:before
+				border-bottom-left-radius: 12px
+
+
+.student
+	&-main
+		padding: 40px 50% 40px 51px
+		background-size: auto 150%
+		background-position: calc(100% - 51px) 50%
+		&-text
+			font-size: $fz16
+	&-progress
+		&-info
+			padding: 24px 88px
+		&-item
+			width: 156px
+			flex-basis: 156px
+	&-profile
+		&-body
+			max-height: calc(100vh - 540px)
+			overflow: auto
+
+.test
+	&-block
+		height: calc(100vh - 188px)
+		display: flex
+		flex-direction: column
+	&-inner
+		height: 100%
+		padding-bottom: 30px
+		overflow: auto
+		&.comparison
+			.test-text
+				&:last-child
+					margin-bottom: 16px
+	&-row
+		max-width: initial
+		display: flex
+		.line
+			width: 1px
+			flex: 0 0 1px
+			margin-right: 24px
+			background-color: rgb($neutral-300)
+	&-col
+		width: 100%
+		margin-bottom: 0
+		overflow: auto
+		&:first-child
+			margin-right: 24px
+		&-title
+			margin-top: 16px
+		.test-header
+			&:not(:first-child)
+				margin-top: 32px
+		&.mini
+			height: initial
+			max-height: calc(100vh - 430px)
+		&.wide
+			margin-right: 0
+			padding-right: 32px
+			max-width: 612px
+		&.narrow
+			flex: 0 0 257px
+			padding-left: 32px
+		img,svg
+			margin-bottom: 80px
+			&:last-child
+				margin-bottom: 0
+	&-left
+		padding: 32px
+	&-col.wide:first-child
+		border-right: 1px solid rgb($neutral-300)
+	&-aside
+		flex: 0 0 267px
+		margin-right: 48px
+	&-pick
+		&-cont
+			min-height: calc(100vh - 188px)
+		&-list
+			&.shsat
+				.test
+					&-pick
+						&-desc
+							padding-left: 30px
+
+
+.skills
+	&-level
+		&-list
+			.skills-level-item
+				width: 25%
+				margin-bottom: 0
+
+
+.login
+	display: flex
+	&-left
+		flex: 0 0 calc(600% / 14.4)
+		display: flex
+		.login-main
+			&-subtitle,&-title
+				color: rgb($black)
+	&-main
+		&-title
+			font-size: calc(30em/14)
+		&-subtitle
+			font-size: calc(22em/14)
+	&-right
+		position: relative
+	.button
+		&-blue,&-lightblue
+			font-size: calc(16em/14)
+	&-bottom
+		.link
+			font-size: calc(18em/14)
+	&-success
+		&-img
+			width: 400px
+		&-bgc
+			img
+				&:nth-child(8)
+					right: 171px
+
+
+.practice
+	&-schedule
+		&-row
+			padding: 0 0 12px
+	&-table
+		&-head .accuracy,&-row .progress
+			width: 177px
+		&-row
+			&-title
+				font-size: $fz18
+			&-subtitle
+				font-size: $fz16
+				color: rgb($neutral-900)
+			.text
+				font-size: $fz18
+	&-achievement
+		&-item
+			margin-bottom: 40px
+
+.adding
+	&-inner
+		+w(1000px)
+	&-row
+		display: flex
+	&-list,&-header-title
+		padding-left: 32px
+	&-list
+		flex: 0 0 320px
+		padding-top: 44px
+		border-right: 1px solid #EBEDF3
+
+	&-body
+		+w(100%)
+		padding: 32px
+	&-block
+		.test-footer
+			padding: 20px 32px
+			justify-content: space-between
+
+.parent
+	&-adding
+		&-inner
+			display: flex
+			align-items: flex-start
+			.adding-list
+				margin-right: 20px
+		&-body
+			width: 100%
+			.test-footer
+				border-top: none
+		&-subtitle
+			font-size: $fz18
+	&-student
+		&-profile
+			&-body
+				max-height: calc(100vh - 285px)
+				overflow: auto
+	.student-profile-body
+		max-height: calc(100vh - 280px)
+
+.plansBlock
+	&-info
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+
+
+.perItemBlock
+	&-inner
+		flex-direction: row
+	&-list
+		margin-left: 20px
+
+
+.avatars
+	&-item
+		button
+			+wh(80px)
+		img
+			height: 70px
+
+
+.notifications
+	&-cont
+		display: flex
+		align-items: flex-start
+		.notifications-list-item
+			margin-top: 28px
+			padding-bottom: 11px
+			border-bottom: 1px solid #EBEDF3
+	&-list
+		&-cont
+			width: 100%
+			max-height: calc(100vh - 426px)
+			overflow-y: scroll
+			padding-right: 30px
+	&-navigate
+		&-list
+			flex: 0 0 288px
+			margin-right: 32px
+			flex-direction: column
+			align-items: stretch
+		&-item
+			margin-bottom: 16px
+		&-button
+			width: 100%
+
+
+.addCard
+	padding: 28px 156px
+
+
+.schedule
+	&-footer
+		flex-direction: row
+		align-items: center
+		&-button
+			margin-bottom: 0
+			margin-right: 12px
+			&.last
+				margin-right: 0
+				margin-left: auto
+
+.usage
+	&-item
+		width: calc((100% - 120px) / 5)
+		flex-basis: calc((100% - 120px) / 5)
+

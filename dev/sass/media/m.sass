@@ -1,0 +1,4965 @@
+g-header
+	display: block
+	//height: 76px
+	//background-color: rgb($blue)
+%transition
+	transition: .35s ease
+%fw
+	flex-wrap: wrap
+%fdc
+	flex-direction: column
+a
+	cursor: pointer
+body
+	height: 100vh
+	background-color: rgb($bgc)
+	overflow-y: scroll
+::-webkit-scrollbar
+	+wh(10px)
+::-webkit-scrollbar-track
+	border-radius: 8px
+	background: rgb($neutral-100)
+::-webkit-scrollbar-thumb
+	border-radius: 6px
+	background: rgb($neutral-400)
+::-webkit-scrollbar-thumb:hover
+	background: rgb($neutral-500)
+#g-set
+	padding-bottom: 24px
+.df
+	@extend %df
+.aifs
+	align-items: flex-start
+.aic
+	align-items: center
+.jcsb
+	justify-content: space-between
+.ui
+	.select,.button,.button-blue,.button-lightblue,.button-transparent
+		margin-top: 20px
+		margin-right: 20px
+	svg
+		max-width: 50px
+
+.tt-ii
+	height: 100%
+	overflow: auto
+.section
+	+w($mobile)
+	padding: 0 10px
+	&>.section
+		&-header
+			padding: 24px 0 0
+	&-header
+		@extend %dfi
+		flex-wrap: wrap
+		&.with-icon
+			align-items: flex-start
+			.section-titles
+				width: calc(100% - 60px)
+		&-select
+			@extend %dfa
+			span
+				margin-right: 8px
+				font: $fz12 $f_bold
+				color: rgb($neutral-800)
+			.select
+				width: 80px
+
+	&-button
+		margin: 4px 10px 4px 0
+		font-family: $f_bold
+	&-icon
+		@extend %dfc
+		+wh(48px)
+		border-radius: 12px
+		svg
+			max-width: 32px
+			max-height: 32px
+
+.section,.block-filter
+	&-buttons
+		@extend %dfa
+		width: 100%
+		flex-direction: column
+	&-button
+		@extend %transition
+		margin-top: 10px
+		white-space: nowrap
+		color: rgb($neutral-400)
+		&.active
+			color: rgb($neutral-800)
+	.icon
+		+wh(20px)
+		margin-right: 10px
+		svg
+			+wh(100%)
+			fill: rgb($blue)
+
+.block
+	padding: 20px 16px
+	margin-top: 12px
+	background-color: rgb($white)
+	border-radius: 12px
+	&-main
+		&-subtitle
+			font-family: $f_bold
+			color: rgb($neutral-400)
+	&-medium
+		&-subtitle
+			font-family: $f_bold
+			line-height: 30px
+			font-size: $fz16
+			letter-spacing: -.02em
+			color: rgb($neutral-400)
+	&-title,&-main-title
+		font-family: $f_bold
+		color: #3F4254
+	&-title
+		@extend %dfa
+		&.small
+			font-size: $fz16
+		&:not(:last-child)
+			margin-bottom: 10px
+		&-control
+			@extend %dfa
+			width: 100%
+			@extend %fw
+			&:not(:last-child)
+				margin-bottom: 16px
+			&-text
+				color: rgb($neutral-400)
+				font-family: $f_bold
+				line-height: $fz23
+			.button
+				margin-right: 10px
+				padding: 9px 16px
+				font-size: $fz12
+				&:last-child
+					margin-right: 0
+	&-filter
+		margin-bottom: 12px
+		&-button
+			font-size: calc(8em / 7)
+			font-family: $f_bold
+	&-text
+		font-size: $fz16
+		color: rgb($neutral-400)
+		line-height: 1.625
+		letter-spacing: -0.02em
+		font-family: $f_bold
+	&-header
+		@extend %df
+		@extend %fdc
+		margin-bottom: 20px
+		&-item
+			margin-top: 20px
+		&-search,&-date
+			position: relative
+			svg
+				+wh(12px)
+				position: absolute
+				left: 14px
+				top: 12px
+				z-index: 1
+				fill: rgb($neutral-600)
+		&-search
+			&:before
+				display: block
+	&-gap
+		margin-bottom: 24px
+	.test-header
+		padding-bottom: 20px
+	.subnavigate
+		padding: 0
+g-modaler
+	.block
+		margin: 0
+.loader
+	+wh(25px)
+	//position: absolute
+	display: inline-block
+	vertical-align: middle
+	margin: auto
+	//transform: translateY(-25%)
+	&-parent
+		justify-content: center
+		text-align: center
+
+.title,.block-title,.block-main-title
+	width: 100%
+	font-size: $fz20
+	line-height: initial
+.title
+	margin-bottom: 10px
+	font-family: $f_reg
+	color: #181C32
+
+.main-title
+	font-size: $fz24
+	letter-spacing: -0.02em
+	span,strong
+		display: block
+		line-height: 1.25
+	span
+		font-family: $p_reg
+	strong
+		font-family: $f_reg
+
+			
+.pagination
+	@extend %dfa
+	@extend %fdc
+	width: 100%
+	&-links
+		@extend %dfa
+	&-info,&-link
+		color: rgb($neutral-600)
+		font-family: $f_bold
+	&-link,&-arrow
+		@extend %dfc
+		+wh(28px)
+		border-radius: 6px
+	&-info
+		margin-bottom: 10px
+	&-inner
+		@extend %dfc
+	&-arrow
+		svg
+			height: 13px
+			fill: rgb($neutral-600)
+		&[disabled]
+			opacity: .3
+	&-prev
+		margin-right: 12px
+	&-next
+		margin-left: 12px
+	&-link
+		margin-right: 10px
+		background-color: rgb($neutral-100)
+		&:last-child
+			margin-right: 0
+		&.active
+			background-color: rgb($blue-light)
+			border: 1px solid rgb($blue)
+			color: rgb($blue)
+		&.done
+			background-color: rgb($green-light)
+			&.active
+				border-color: rgb($green)
+		&.error
+			background-color: rgb($red-light)
+			&.active
+				border-color: rgb($red)
+		&.done,&.error
+			span
+				display: none
+			&:after
+				display: block
+		&.done
+			&:after
+				+wh(19px)
+				content: url("img/checkmark-green.svg")
+		&.error
+			&:after
+				+wh(13px)
+				content: url("img/close-red.svg")
+	&-link,&-arrow
+		&:hover
+			background-color: rgb($neutral-100)
+	&-top
+		.pagination
+			&-info
+				color: rgb($neutral-800 )
+	&-end
+		margin-top: 10px
+		font-size: 12px
+		span
+			margin-right: 8px
+			color: rgb($neutral-800)
+			font-family: $f_bold
+		input
+			+wh(35px,34px)
+			background-color: rgb($neutral-100)
+			border-radius: 6px
+			text-align: center
+			font-family: $f_bold
+			color: rgb($neutral-500)
+	&.fill
+		.active
+			background-color: rgb($blue)
+			color: rgb($white)
+		.pagination-end span
+			font-family: $f_reg
+			color: rgb($neutral-800)
+
+.head
+	background-color: rgb($red)
+	&-logo
+		max-width: calc(100% - 220px)
+	&-row
+		@extend %dfi
+		padding: 16px 0
+	&-control
+		@extend %dfa
+	&-button
+		margin-right: 14px
+		svg
+			+wh(28px)
+			fill: rgb($white)
+	&-info
+		@extend %df
+		margin-right: 14px
+		@extend %fdc
+	&-name,&-position
+		font-family: $f_reg
+		font-size: $fz12
+		text-align: right
+		line-height: initial
+	&-position
+		color: rgb($white)
+	&-name
+		color: rgb($blue-white)
+	&-user
+		@extend %dfc
+		+wh(30px)
+		position: relative
+		background-color: rgba($white,.08)
+		border-radius: 6px
+		color: rgb($white)
+		font-family: $f_bold
+		font-size: $fz20
+		&.show
+			.head-user-list
+				opacity: 1
+				visibility: visible
+		&-list
+			opacity: 0
+			visibility: hidden
+			transition: .35s ease
+			box-shadow: 0 0 40px rgba(56, 71, 109, 0.29)
+			border-radius: 12px
+			background-color: #fff
+			position: absolute
+			z-index: 100
+			top: calc( 100% + 10px)
+			right: -10px
+			color: RGB($neutral-600)
+			text-align: left
+			padding: 20px 24px
+			&:before
+				+af
+				+wh(1px)
+				position: absolute
+				top: -13px
+				right: 24px
+				border: 6px solid transparent
+				border-bottom-color: #fff
+			strong
+				display: block
+				cursor: pointer
+				font: 14px $f_reg
+				margin-bottom: 28px
+				white-space: nowrap
+				&:last-child
+					margin-bottom: 0
+	&-select
+		+wh(60px,20px)
+		display: block
+		&-block
+			margin-right: 14px
+			span
+				font-family: $p_reg
+				font-size: $fz12
+				color: rgb($white)
+
+.navigate
+	background-color: rgb($blue)
+	&-label
+		display: none
+		opacity: 0
+		position: absolute
+		transition: .35s ease
+		&.active
+			opacity: 1
+			display: block
+	&-list
+		@extend %dfi
+		padding: 10px 0
+		@extend %fw
+	&-item
+		width: 50%
+		padding: 10px
+		border-radius: 8px
+		color: rgb($blue-white)
+		font-family: $f_reg
+		&.active
+			background-color: rgb($white)
+			color: rgb($neutral-800)
+
+
+
+.note,.report
+	padding: 24px
+
+
+.filter
+	@extend %df
+	width: 100%
+	flex-direction: column
+
+
+.student
+	&-main
+		&-text
+			margin-top: 12px
+			letter-spacing: -0.02em
+			font-family: $f_bold
+			color: rgb($neutral-400)
+			line-height: 1.625
+			strong
+				margin-left: 5px
+				color: rgb($main-text)
+		.button-blue
+			margin-top: 16px
+			padding: 12px 20px
+			font-size: $fz15
+			font-family: $f_bold
+	&-profile
+		&-send,&-change
+			font: 16px $f_bold
+			line-height: 20px
+		&-send
+			margin: 27px 0
+			&:before
+				+wh(16px,13px)
+				background-image: url(../img/reset.svg)
+				background-size: 16px 13px
+		&-change
+			@extend %dfa
+			color: #7E8299
+			margin-left: 13px
+			&:before
+				+wh(16px)
+				+af
+				margin-right: 12px
+				background-image: url(../img/change.svg)
+				background-size: 16px
+		&-courses
+			&-btns
+				@extend %dfi
+			&-btn
+				+w(100%)
+				font: 16px $f_bold
+				padding: 22px 0
+				color: rgb($neutral-400)
+				border: 1px solid transparent
+				&.active
+					color: rgb($neutral-800)
+					border-bottom-color: rgb($blue-text)
+		&-plan
+			border-radius: 12px
+			padding: 16px
+			background-color: #ECF8FF
+			position: relative
+			&-title
+				font: 20px $f_reg
+				text-transform: uppercase
+				color: #464E5F
+			&-price,span
+				font: 14px $f_bold
+				color: #B5B5C3
+			&-price
+				margin-top: 5px
+				border-bottom: 1px solid  #EBEDF3
+				padding-bottom: 16px
+			span
+				padding-top: 16px
+				display: block
+			&-edit
+				@extend %dfa
+				button
+					margin-left: 16px
+					padding: 9px 19px
+					font: $fz12 $f_reg
+		&-refund
+			margin-top: 16px
+		&-remove,&-delete
+			font: 16px $f_bold
+			line-height: 20px
+			padding: 11px 20px 11px 40px
+		&-remove
+			+bdrs(6px)
+			display: block
+			background: #D9214E url('../img/trash.svg') no-repeat 10px center
+			margin: 32px auto 0
+			color: #fff
+		&-footer,&-actions
+			display: flex
+			flex-wrap: wrap
+			&.sb
+				width: 100%
+				justify-content: space-between
+			button
+				width: 100%
+		&-footer
+			margin-top: 44px
+			padding-top: 21px
+			border-top: 1px solid #EBEDF3
+			justify-content: space-between
+		&-delete
+			color: #D9214E
+			padding-top: 16px
+			background: no-repeat 10px center
+			background-image: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.5 3C9.5 2.17157 8.82843 1.5 8 1.5C7.17157 1.5 6.5 2.17157 6.5 3H5.5C5.5 1.61929 6.61929 0.5 8 0.5C9.38071 0.5 10.5 1.61929 10.5 3H15C15.2761 3 15.5 3.22386 15.5 3.5C15.5 3.77614 15.2761 4 15 4H14.446L13.1499 15.2292C13.0335 16.2384 12.179 17 11.1631 17H4.83688C3.821 17 2.9665 16.2384 2.85006 15.2292L1.553 4H1C0.75454 4 0.550392 3.82312 0.508056 3.58988L0.5 3.5C0.5 3.22386 0.723858 3 1 3H9.5ZM13.438 4H2.561L3.84347 15.1146C3.90169 15.6192 4.32894 16 4.83688 16H11.1631C11.6711 16 12.0983 15.6192 12.1565 15.1146L13.438 4ZM6.5 6.5C6.74546 6.5 6.94961 6.65477 6.99194 6.85886L7 6.9375V13.0625C7 13.3041 6.77614 13.5 6.5 13.5C6.25454 13.5 6.05039 13.3452 6.00806 13.1411L6 13.0625V6.9375C6 6.69588 6.22386 6.5 6.5 6.5ZM9.5 6.5C9.74546 6.5 9.94961 6.65477 9.99194 6.85886L10 6.9375V13.0625C10 13.3041 9.77614 13.5 9.5 13.5C9.25454 13.5 9.05039 13.3452 9.00806 13.1411L9 13.0625V6.9375C9 6.69588 9.22386 6.5 9.5 6.5Z' fill='%23D9214E'/%3E%3C/svg%3E%0A")
+		&-course
+			&-empty
+				margin: 32px 0
+				text-align: center
+				font: 14px $f_reg
+				line-height: 24px
+				color: rgb($neutral-400)
+			&-empty-btn
+				+wh(100%,48px)
+				+bdrs(6px)
+				font: 16px $f_bold
+				color: rgb($blue-text)
+				background-color: #E1F0FF
+				.button-icon
+					fill: rgb($blue)!important
+			&-info
+				text-align: left
+		&-inner
+			&.short
+				max-width: 588px
+				margin: auto
+	&-progress
+		background-color: #21E1D8
+		border-radius: 12px
+		&-graphic
+			padding: 23px 30px 0
+		&-title
+			margin-bottom: 12px
+			font: $fz17 $f_bold
+			color: #fff
+		&-info
+			@extend %df
+			padding: 20px
+			justify-content: space-between
+			flex-wrap: wrap
+			background-color: #fff
+			border-radius: 12px
+		&-item
+			flex: 0 0 40%
+			width: 40%
+			margin-top: 30px
+			&:nth-child(1),&:nth-child(2)
+				margin-top: 0
+			&-title
+				font: $fz12 $p_reg
+				color: rgb($neutral-400)
+			&-value
+				font: $fz20 $f_bold
+				color: rgb($neutral-800)
+		&-lines
+			@extend %df
+			padding: 0 30px
+			justify-content: space-between
+			align-items: flex-end
+			span
+				width: 11px
+				display: block
+				background-color: #fff
+				position: relative
+				&:before
+					+af
+					width: 100%
+					height: calc(100% - 10px)
+					background-color: rgba(#fff,.5)
+					position: absolute
+					left: -150%
+					bottom: 0
+				&,&:before
+					border-radius: 10px 10px 0 0
+				&:nth-child(1)
+					height: 72px
+				&:nth-child(2)
+					height: 122px
+				&:nth-child(3)
+					height: 142px
+				&:nth-child(4)
+					height: 92px
+				&:nth-child(5)
+					height: 77px
+				&:nth-child(6)
+					height: 112px
+				&:nth-child(7)
+					height: 97px
+
+
+
+.notifications
+	&-list
+		&-subtitle
+			margin-top: 32px
+			color: rgb($neutral-800)
+			letter-spacing: -.02em
+			font-size: $fz16
+		&-titles
+			display: none
+		&-item
+			@extend %dfi
+			flex-wrap: wrap
+			margin-top: 48px
+			&-label
+				@extend %dfa
+				flex-direction: column
+				&-title
+					font-family: $f_bold
+					color: rgb(var(--neutral-800))
+				input[type="checkbox"]
+					display: none
+				input[type="checkbox"]:checked+span
+					background-color: rgb($blue-text)
+				input[type="checkbox"]:checked+span:after
+					left: 3px
+			&-content
+				width: 100%
+				margin-bottom: 10px
+				margin-right: auto
+			&-title
+				font: 16px $f_bold
+				line-height: 24px
+				color: rgb($neutral-800)
+			&-subtitle
+				font: 14px $f_reg
+				line-height: 20px
+				color: rgb($neutral-500)
+			&-action-btn
+				+wh(44px,30px)
+				+bdrs(30px)
+				display: block
+				position: relative
+				background: rgba(235, 237, 243, 1)
+				transition: .35s ease
+				&:after
+					+wh(24px)
+					+bdrs(24px)
+					box-shadow: 0 0 8px rgba(0, 0, 0, 0.08)
+					background-color: #fff
+					transition: .35s ease
+					content: ''
+					position: absolute
+					top: 3px
+					left: 17px
+	&-navigate
+		&-list
+			padding: 24px
+			margin-bottom: 24px
+			background: #FFF
+			box-shadow: 0 0 30px rgba(56, 71, 109, 0.09)
+			border-radius: 12px
+		&-item
+			margin-bottom: 16px
+			&:last-child
+				margin-bottom: 0
+		&-button
+			padding: 10px 16px
+			border-radius: 8px
+			text-align: left
+			font: 1em $f_reg
+			color: #80808F
+			&.active
+				background-color: #F5F8FA
+				color: #009EF6
+
+
+.subnavigate
+	padding: 18px 0
+	background-color: rgb($white)
+	.section
+		min-height: 44px
+	&-button
+		@extend %dfa
+		padding: 10px 16px
+		border-radius: 8px
+		font-family: $f_reg
+		color: rgb($subnav)
+		line-height: $fz24
+		&.active
+			color: rgb($blue)
+			background-color: rgb($neutral-100)
+
+
+.upcoming
+	&-item
+		@extend %df
+		padding: 2px 0 4px 17px
+		@extend %fdc
+		align-items: flex-start
+		position: relative
+		&:not(&:last-child)
+			margin-bottom: 16px
+		&:before
+			+af
+			+wh(4px,100%)
+			border-radius: 8px
+			background-color: #E4E6EF
+			position: absolute
+			left: 0
+			top: 0
+	&-center
+		margin: 10px 0
+		.status
+			padding: 6px 11.5px
+			border-radius: 6px
+			font-size: $fz12
+			font-family: $f_bold
+			&.completed
+				background-color: rgb($green-light)
+				color: rgb($green)
+			&.inprogress
+				background-color: rgb($blue-light)
+				color: #00A3FF
+			&.yet
+				background-color: rgb($neutral-100)
+				color: rgb($neutral-500)
+	&-right
+		.action
+			&-button
+				@extend %dfc
+				@extend %transition
+				+wh(64px,34px)
+				padding: 0
+				background-color: rgb($blue-text)
+				border: 1px solid transparent
+				border-radius: 6px
+				color: rgb($white)
+				font-size: $fz12
+				&[disabled]
+					opacity: .3
+	&-time,&-title
+		&:not(:last-child)
+			margin-bottom: 4px
+	&-time
+		@extend %df
+		font-size: $fz16
+		font-family: $f_bold
+		color: rgb($neutral-800)
+		.day,.date,.time
+			line-height: $fz20
+		.day,.date
+			margin-right: 5px
+		.time
+			i
+				margin-left: 5px
+				font-size: calc(12em/16)
+				line-height: calc(20em/12)
+				color: rgb($neutral-400)
+	&-title
+		font-family: $f_bold
+		line-height: $fz20
+		color: #5E6278
+	&-instructor
+		@extend %dfa
+		.photo
+			+wh(36px)
+			margin-right: 8px
+			border-radius: 100%
+			overflow: hidden
+			img
+				+wh(100%)
+				display: block
+				object-fit: cover
+		.info
+			&-lead
+				@extend %dfa
+				font-family: $f_bold
+				font-size: $fz12
+				&-left
+					margin-right: 5px
+					color: rgb($neutral-400)
+			&-lead-left,&-lead-right,&-button
+				line-height: calc(18em / 12)
+			&-button
+				color: rgb($blue-text)
+
+
+.schedule
+	&-list
+		margin: 20px 0
+	&-item
+		@extend %dfa
+		margin-bottom: 20px
+		flex-direction: column
+		&:first-child
+			.info
+				width: 101px
+		&:last-child
+			margin-bottom: 0
+		.inner
+			@extend %dfc
+			@extend %fdc
+			+wh(154px)
+			padding: 5px
+			position: relative
+			svg
+				+wh(100%)
+				position: absolute
+				top: 0
+				left: 0
+				stroke: rgb($orange)
+				transform: rotate(220deg)
+				circle
+					stroke-width: 10px
+					r: 67
+					fill: none
+					stroke-dashoffset: -167
+		.count
+			font: $fz30 $f_bold
+			color: rgb($neutral-800)
+		.info
+			width: 102px
+			text-align: center
+			letter-spacing: -.01em
+			font-family: $p_reg
+			text-transform: uppercase
+	&-title
+		margin-bottom: 15px
+		text-align: center
+		font-family: $f_reg
+		line-height: 20px
+		text-transform: capitalize
+	&-footer
+		@extend %df
+		flex-direction: column
+		&-button
+			@extend %dfa
+			margin-bottom: 10px
+			padding: 10px
+			border-radius: 8px
+			border: 2px dashed transparent
+			transition: .35s ease
+			&.active
+				border-color: rgb($neutral-300)
+				.arrow
+					transform: rotate(-45deg) translate(-1px,1px)
+			.icon
+				+wh(14px)
+				svg
+					+wh(100%)
+					fill: rgb($neutral-600)
+			.text
+				margin: 0 12px
+				color: rgb($neutral-600)
+				font: 12px $f_bold
+				&:last-child
+					margin-right: 0
+			.arrow
+				+wh(9px)
+				border-top: 2px solid rgb($neutral-600)
+				border-right: 2px solid rgb($neutral-600)
+				transform: rotate(135deg) translate(-2px,2px)
+				transition: .35s ease
+
+
+.calendar
+	font-size: $fz12
+	&-days
+		width: 224px
+		border-bottom: 1px solid rgb($neutral-400)
+		color: rgb($neutral-400)
+		font-size: $fz12
+	&-day
+		@extend %dfc
+	&-btn,&-day
+		+wh(32px)
+	&-row,&-days
+		@extend %dfa
+	&-list,&-days
+		margin: 0 auto
+	&-list
+		width: 264px
+		height: 400px
+		padding: 0 10px 0 20px
+		overflow-y: scroll
+	&-item
+		padding-top: 16px
+	&-title
+		margin-bottom: 8px
+		color: rgb($neutral-400)
+		text-transform: uppercase
+		font-family: $f_reg
+	&-inner
+		border: 1px solid rgb($neutral-200)
+	&-btn
+		border: 1px solid rgb($neutral-200)
+		position: relative
+		&.fill
+			background-color: rgb($blue-light)
+		span
+			@extend %dfc
+			+wh(16px)
+			position: absolute
+			left: 2px
+			bottom: -2px
+	&-link
+		position: absolute
+		right: 2px
+		top: 2px
+		svg
+			+wh(16px)
+			fill: rgb($blue)
+
+
+.hidden
+	&-cont
+		@extend %df
+		@extend %transition
+		max-height: 0
+		margin: 0 auto
+		overflow: hidden
+		@extend %fdc
+		&.active
+			max-height: 450px
+			padding-top: 8px
+			overflow: auto
+	&-show
+		@extend %dfa
+		margin-top: 20px
+		padding: 10px 14px
+		color: rgb($neutral-500)
+		font-family: $f_bold
+		font-size: $fz12
+		&-text
+			position: relative
+		span
+			@extend %transition
+			white-space: nowrap
+			left: 0
+			top: 0
+			&:nth-child(2)
+				opacity: 0
+				visibility: hidden
+				position: absolute
+		svg
+			@extend %transition
+			+wh(11px,7px)
+			margin-left: 16px
+			margin-bottom: 1px
+			fill: rgb($neutral-500)
+		&.active
+			span
+				&:first-child
+					opacity: 0
+					visibility: hidden
+					position: absolute
+				&:last-child
+					opacity: 1
+					visibility: visible
+					position: static
+			svg
+				transform: rotate(180deg)
+
+
+.rewards
+	&-statistic
+		&-item
+			@extend %dfa
+			margin-bottom: 47px
+			position: relative
+			&:after
+				+af
+				+wh(3px,40px)
+				border-radius: 8px
+				background-color: rgb($neutral-300)
+				position: absolute
+				bottom: -43px
+				left: 54px
+			&:last-child
+				margin-bottom: 0
+				&:after
+					content: none
+			.circle
+				+wh(13px)
+				flex: 0 0 13px
+				margin-right: 11px
+				border-radius: 100%
+				border: 3px solid transparent
+				&.violet
+					border-color: rgb($viol-dark)
+				&.green
+					border-color: rgb($turquoise)
+				&.red
+					border-color: rgb($red)
+			strong
+				font-family: $f_reg
+				font-size: $fz13
+				&:first-child
+					width: 49px
+					flex: 0 0 49px
+					font-size: 1em
+			span
+				font-size: $fz12
+				color: $subnav
+				font-family: $p_reg
+
+
+.frequently
+	&-row
+		@extend %dfa
+		@extend %fw
+		margin-top: 20px
+	.button
+		padding: 10px 16px
+		margin: 0 10px 10px 0
+		font-family: $f_bold
+		color: rgb($neutral-600)
+
+
+.test
+	&-scores
+		&-list
+			@extend %df
+			justify-content: space-between
+			@extend %fw
+		&-item
+			@extend %df
+			width: calc(50% - 5px)
+			margin-bottom: 10px
+			padding: 11px 0 12px 13px
+			@extend %fdc
+			border: 1px dashed rgb($neutral-400)
+			border-radius: 8px
+			&.orange
+				border-color: rgb($orange)
+				span,strong
+					color: rgb($orange)
+			&.green
+				border-color: rgb($green-dark)
+				span,strong
+					color: rgb($green-dark)
+			&.brown
+				border-color: rgb($brown)
+				span,strong
+					color: rgb($brown)
+			strong
+				margin-bottom: 3px
+				font-family: $f_black
+				color: rgb($neutral-800)
+				font-size: $fz24
+			span
+				color: rgb($neutral-400)
+				font-family: $f_bold
+		.table
+			padding-bottom: 20px
+			table
+				width: 100%
+				border-collapse: collapse
+			th
+				.table-inner
+					padding: 12px 10px
+					background-color: rgb($neutral-100)
+					text-transform: uppercase
+					font-size: $fz12
+				&:first-child
+					.table-inner
+						text-align: left
+						border-radius: 6px 0 0 6px
+				&:last-child
+					.table-inner
+						border-radius: 0 6px 6px 0
+			td
+				.table-inner
+					padding: 24px 10px 0
+					text-align: center
+				&:first-child
+					.table-inner
+						text-align: left
+						font-family: $p_reg
+			th,td
+				&:first-child
+					.table-inner
+						padding-left: 20px
+				&:nth-child(3)
+					color: rgb($green)
+				&:nth-child(4)
+					color: rgb($blue)
+				&:nth-child(5)
+					color: rgb($viol)
+				&:nth-child(6)
+					color: rgb($turquoise)
+				&:nth-child(7)
+					color: rgb($brown)
+				&:last-child
+					.table-inner
+						padding-right: 20px
+			&-inner
+				font-family: $f_reg
+	&-title
+		&:not(:last-child)
+			margin-bottom: 12px
+	&-timer
+		margin: 0 10px 10px 0
+		white-space: nowrap
+		font: $fz16 $f_reg
+	&-block
+		display: flex
+		flex-direction: column
+		justify-content: flex-start
+	&-subtitle
+		font-family: $f_bold
+		font-size: $fz18
+		&.small
+			color: rgb($neutral-400)
+			font-family: $f_reg
+			font-size: 1em
+			line-height: $fz24
+	&-text
+		margin-top: 16px
+		font-size: $fz16
+		&:first-child
+			margin-top: 0
+		&,span
+			line-height: calc(24em / 16)
+		span
+			display: block
+	&-header
+		@extend %dfi
+		flex-wrap: wrap
+		border-bottom: 1px solid rgb($neutral-200)
+		&-button
+			@extend %dfa
+			svg
+				+wh(16px)
+				margin: 0 4px 0 0!important
+				&:nth-child(2)
+					display: none
+			span
+				font-family: $p_reg
+				color: rgb($neutral-600)
+				font-size: $fz12
+			&.active
+				svg
+					&:first-child
+						display: none
+					&:nth-child(2)
+						display: block
+						fill: rgb($blue)
+				span
+					color: rgb($blue)
+		&-text
+			color: rgb($neutral-400)
+	&-inner
+		width: 100%
+		margin: 0 auto 20px
+		padding: 20px 0
+		&:first-child
+			padding-top: 0
+		&.narrow
+			max-width: 598px
+		&.middle
+			max-width: 620px
+	&-row
+		&:not(:first-child)
+			margin-top: 20px
+	&-col
+		margin-bottom: 20px
+		&:last-child
+			margin-bottom: 0
+		&.narrow
+			width: 257px
+			margin-right: auto
+			margin-left: auto
+		.test
+			&-header
+				&:not(:first-child)
+					margin-top: 20px
+		&-title
+			font-size: $fz16
+			color: rgb($neutral-700)
+			text-align: center
+			font-family: $f_bold
+			text-decoration: underline
+		svg,img
+			margin: 0 auto 20px
+			display: block
+		.test-title
+			color: rgb($neutral-600)
+			font-size: $fz12
+	&-left
+		padding: 20px
+		display: flex
+		flex-direction: column
+		background-color: rgb($neutral-200)
+		&-text
+			margin-bottom: 20px
+			font-family: $p_reg
+			color: rgb($neutral-800)
+			line-height: $fz24
+			&:last-child
+				margin-bottom: 0
+	&-right
+		padding: 20px
+		border-radius: 8px
+		border: 1px solid rgb($neutral-300)
+	&-footer
+		@extend %dfa
+		padding-top: 20px
+		padding-bottom: 20px
+		margin-top: auto
+		flex-direction: column
+		align-items: flex-start
+		border-top: 1px solid rgb($neutral-200)
+		&.narrow
+			max-width: 494px
+			margin: 0 auto
+		&-back
+			@extend %dfc
+			+w(100%)
+			padding: 13px 12px
+			color: rgb($neutral-400)
+			font-family: $f_bold
+			border-radius: 6px
+		&-button
+			color: rgb($blue-text)
+			font-size: $fz15
+			font-family: $f_bold
+		&-button,&-back,.button,.button-blue,.pagination
+			width: 100%
+			margin-bottom: 10px
+			&:last-child
+				margin-bottom: 0
+		&-button,&-back,.button,.button-blue
+			justify-content: center
+	&-result
+		margin-top: 32px
+		&:first-child
+			margin-top: 0
+		&-block
+			@extend %df
+			+wh(100%,139px)
+			margin-bottom: 10px
+			padding: 24px
+			justify-content: space-between
+			flex-direction: column
+			border-radius: 12px
+			position: relative
+			&.gray
+				background-color: rgb($neutral-100)
+				color: rgb($neutral-500)
+			&.turquoise
+				background-color: rgb($turquoise-light)
+				color: rgb($turquoise)
+			&.violet
+				background-color: rgb($viol-light)
+				color: rgb($viol)
+				.test-result-img svg
+					fill: rgb($viol)
+			&.green
+				background-color: rgb($green-light)
+				color: rgb($green)
+			&.blue
+				background-color: rgb($blue-light)
+				color: rgb($blue)
+				.test-result-img svg
+					fill: rgb($blue)
+			&.red
+				background-color: rgb($red-light)
+				color: rgb($red)
+				.test-result-img svg
+					fill: rgb($red)
+			&.gold
+				background-color: rgb($gold-light)
+				color: rgb($gold)
+				.test-result-img svg
+					fill: rgb($gold)
+		&-title
+			font-family: $f_reg
+			font-size: $fz15
+			line-height: $fz22
+		&-score
+			font-family: $f_bold
+			color: rgb($neutral-900)
+			font-size: $fz25
+		&-img
+			position: absolute
+			right: 24px
+			bottom: 24px
+			svg
+				position: absolute
+			&:not(.solo)
+				svg
+					+wh(27px)
+					&:nth-child(1)
+						+wh(37px)
+						right: 46px
+						bottom: 6px
+					&:nth-child(2)
+						right: 4px
+						bottom: 0
+					&:nth-child(3)
+						right: 0
+						bottom: 36px
+			&.solo
+				svg
+					+wh(54px,58px)
+					right: 0
+					bottom: 0
+		&-list
+			&-title
+				margin-bottom: 20px
+				font-family: $f_bold
+				font-size: $fz18
+			&-item
+				@extend %dfa
+				margin-bottom: 12px
+				span
+					font-family: $p_reg
+			&-img
+				@extend %dfc
+				+wh(48px)
+				margin-right: 16px
+				border-radius: 12px
+				background-color: rgb($blue-light)
+				svg
+					+wh(32px)
+					fill: rgb($blue)
+		&-text
+			margin-bottom: auto
+			line-height: $fz18
+			color: rgb($neutral-500)
+			font-size: $fz12
+	&-label
+		&-block
+			@extend %df
+			width: 100%
+			margin: 32px 0
+			padding: 17px 18px
+			align-items: flex-start
+			background-color: rgb($neutral-200)
+			border-radius: 8px
+			color: rgb($neutral-800)
+			font-family: $p_reg
+			position: relative
+			svg
+				display: block
+				fill: rgb($neutral-600)
+		&-title
+			margin-bottom: 10px
+		&-icon
+			margin-right: 14px
+			svg
+				+wh(20px)
+		&-text
+			margin-top: -1px
+			p,h5
+				line-height: $fz24
+		&-button
+			padding: 2px 10px
+			svg
+				+wh(4px,16px)
+		&-modal
+			@extend %df
+			@extend %fdc
+			@extend %transition
+			padding: 7px 10px
+			align-items: flex-start
+			background-color: rgb($white)
+			box-shadow: 0 0 40px rgba(56, 71, 109, 0.29)
+			border-radius: 8px
+			position: absolute
+			top: 10px
+			right: 45px
+			opacity: 0
+			visibility: hidden
+			&.active
+				opacity: 1
+				visibility: visible
+			&-button
+				margin-bottom: 12px
+				font-family: $p_reg
+				font-size: 12px
+				line-height: calc(4em / 3)
+				color: rgb($neutral-600)
+				&:last-child
+					margin-bottom: 0
+	&-aside
+		margin-bottom: 30px
+		&-title
+			margin-bottom: 16px
+			font-family: $f_bold
+		&-btn
+			@extend %df
+			@extend %fdc
+			width: 100%
+			padding: 7px 14px 10px
+			border-radius: 6px
+			font-family: $p_reg
+			color: rgb($neutral-500)
+			&.active
+				background-color: rgb($blue-light)
+				.test-aside-btn
+					&-desc,&-title
+						color: rgb($blue)
+			&-title
+				font-size: $fz15
+				line-height: $fz22
+			&-desc
+				margin-bottom: 4px
+				font-size: $fz12
+				line-height: $fz18
+			&-date
+				@extend %dfa
+				font-size: $fz12
+				letter-spacing: -.01em
+				svg
+					+wh(16px)
+					margin-right: 4px
+					fill: rgb($blue)
+			&-results
+				@extend %dfa
+				margin-bottom: 4px
+				opacity: .8
+				span
+					@extend %dfa
+					font: $fz12 $f_bold
+					line-height: calc(18em/12)
+					&:first-child
+						color: #464E5F
+					&:after
+						+af
+						+wh(3px)
+						margin: 0 5px
+						border-radius: 100%
+						background-color: #464E5F
+					&:last-child
+						&:after
+							content: none
+	&-results
+		.total
+			padding: 24px
+			border-radius: 12px
+			background-color: rgb($bgc)
+			font: $fz15 $f_bold
+			&-value
+				margin-top: 3px
+				font: calc(36em / 14) $f_bold
+				line-height: 1.5
+		&-item
+			@extend %df
+			margin-top: 12px
+			flex-direction: column
+			border-radius: 12px
+			padding: 24px
+			&-title
+				margin-bottom: 16px
+				font: $fz15 $f_bold
+			&-value
+				font: $fz25 $f_bold
+			&-button
+				margin-top: 16px
+				padding: 12px 20px
+				border-radius: 9px
+				color: #fff
+				font: $fz15 $f_bold
+		&-reset
+			@extend %df
+			margin-top: 24px
+			flex-direction: column
+			align-items: flex-start
+			&-text
+				margin: 8px 0 16px
+				font: $fz12 $f_bold
+				color: #B5B5C3
+	&-tabs
+		width: 100%
+		position: relative
+		&-body
+			.show-score
+				@extend %dfc
+				width: 100%
+				margin-top: 24px
+				padding: 12px 20px
+				border-radius: 6px
+				background-color: #F5F8FA
+				color: rgb($neutral-600)
+				text-transform: capitalize
+				font: $fz15 $f_bold
+				span
+					margin-right: 15px
+				svg
+					+wh(11px,8px)
+					fill: rgb($neutral-600)
+
+	&-pick
+		&-list
+			margin-bottom: 55px
+			&.shsat
+				.test
+					&-pick
+						&-desc
+							padding-left: 20px
+							&-item
+								list-style: disc
+						&-time
+							height: initial
+		&-item
+			@extend %df
+			margin-top: 16px
+			padding: 17px 19px
+			border-radius: 6px
+			flex-wrap: wrap
+			.button
+				width: 100%
+				height: 42px
+				margin-top: 12px
+				padding: 12px 20px
+				color: rgb($white)
+			&.green
+				background-color: rgb($green-light)
+				.test-pick
+					&-time
+						background-color: rgb($green)
+						&:before
+							background-color: rgba($green,.3)
+					&-desc
+						color: rgb($green)
+				.button
+					background-color: rgb($green)
+			&.blue
+				background-color: rgb($blue-light)
+				.test-pick
+					&-time
+						background-color: rgb($blue)
+						&:before
+							background-color: rgba($blue,.3)
+					&-desc
+						color: rgb($blue)
+				.button
+					background-color: rgb($blue)
+			&.brown
+				background-color: rgb($brown-light)
+				.test-pick
+					&-time
+						background-color: rgb($brown)
+						&:before
+							background-color: rgba($brown,.3)
+					&-desc
+						color: rgb($brown)
+				.button
+					background-color: rgb($brown)
+			&.violet
+				background-color: rgb($viol-light)
+				.test-pick
+					&-time
+						background-color: rgb($viol)
+						&:before
+							background-color: rgba($viol,.3)
+					&-desc
+						color: rgb($viol)
+				.button
+					background-color: rgb($viol)
+			&.turquoise
+				background-color: rgb($turquoise-light)
+				.test-pick
+					&-time
+						background-color: rgb($turquoise)
+						&:before
+							background-color: rgba($turquoise,.3)
+					&-desc
+						color: rgb($turquoise)
+				.button
+					background-color: rgb($turquoise)
+			&.red
+				background-color: rgb($red-light)
+				.test-pick
+					&-time
+						background-color: rgb($red)
+						&:before
+							background-color: rgba($red,.3)
+					&-desc
+						color: rgb($red)
+				.button
+					background-color: rgb($red)
+			&.done
+				.test-pick
+					&-time
+						span
+							display: none
+						&:after
+							content: url("img/checkmark.svg")
+							display: block
+							+wh(20px)
+							position: absolute
+						&:before
+							+af
+							+wh(24px)
+							border-radius: 100%
+				.button
+					background-color: rgb($neutral-100)
+					color: rgb($neutral-600)
+			&.disabled,&.done
+				border: 1px dashed
+				background-color: transparent
+				.test-pick
+					&-title
+						color: rgb($neutral-800)
+				.text
+					color: rgb($neutral-600)
+				&.blue
+					border-color: rgb($blue)
+					.test-pick
+						&-time
+							background-color: rgb($blue-light)
+							color: rgb($blue)
+				&.red
+					border-color: rgb($red)
+					.test-pick
+						&-time
+							background-color: rgb($red-light)
+							color: rgb($red)
+				&.violet
+					border-color: rgb($viol)
+					.test-pick
+						&-time
+							background-color: rgb($viol-light)
+							color: rgb($viol)
+				&.turquoise
+					border-color: rgb($turquoise)
+					.test-pick
+						&-time
+							background-color: rgb($turquoise-light)
+							color: rgb($turquoise)
+				&.brown
+					border-color: rgb($brown)
+					.test-pick
+						&-time
+							background-color: rgb($brown-light)
+							color: rgb($brown)
+				&.green
+					border-color: rgb($green)
+					.test-pick
+						&-time
+							background-color: rgb($green-light)
+							color: rgb($green)
+		&-time
+			@extend %dfc
+			@extend %fdc
+			+wh(48px)
+			margin-top: 3px
+			margin-right: 12px
+			border-radius: 12px
+			font-family: $f_reg
+			color: rgb($white)
+		&-title,&-desc .text
+			margin-bottom: 2px
+			font-size: $fz16
+			line-height: $fz22
+		&-title
+			font-family: $f_bold
+		&-desc
+			width: calc(100% - 60px)
+			.text
+				@extend %dfa
+			svg
+				+wh(16px)
+				flex: 0 0 16px
+				margin-right: 8px
+				fill: rgb($neutral-600)
+		&-result
+			margin-bottom: 55px
+			.text
+				margin: 8px 0 16px
+				color: rgb($neutral-400)
+				font-size: $fz12
+
+
+.essay
+	&-textarea
+		width: 100%
+		height: 100%
+		margin-top: 32px
+		padding: 12px
+		background-color: rgb($neutral-100)
+		border-radius: 9px
+		border: none
+		resize: none
+	&-right
+		height: 100%
+		padding-bottom: 0
+		border: none
+		@extend %df
+		@extend %fdc
+		.test-text
+			flex-shrink: 0
+	&-result
+		&-loader
+			+wh(100%)
+			background-color: rgb(var(--bgc))
+			position: absolute
+			z-index: 1
+			top: 0
+			.section
+				height: calc(100% - 48px)
+			.block
+				@extend %dfa
+				@extend %fdc
+				height: 100%
+				overflow: hidden
+			.loader
+				&-title
+					margin-bottom: 16px
+					font-size: $fz20
+					font-family: $f_bold
+				&-subtitle
+					margin-bottom: 48px
+					font-family: $f_bold
+					color: rgb($neutral-400)
+				&-progress
+					@extend %df
+					@extend %fdc
+					width: 100%
+					max-width: 588px
+					margin-bottom: 75px
+					padding: 29px
+					flex-shrink: 0
+					position: relative
+					background: #FFFFFF
+					box-shadow: 0 0 30px rgba(56, 71, 109, 0.09)
+					border-radius: 12px
+					overflow: hidden
+					img
+						position: absolute
+						right: 0
+						top: 0
+					&-title
+						margin-bottom: 55px
+						color: rgb($blue)
+						font-family: $f_reg
+					&-percent
+						margin-bottom: 25px
+						font-size: $fz20
+						font-family: $f_bold
+					&-line
+						width: 100%
+						height: 6px
+						border-radius: 3px
+						background-color: rgb($blue-light)
+						.inner
+							width: 0
+							height: 6px
+							border-radius: 3px
+							background-color: rgb($blue)
+				&-img
+					width: 100%
+					max-width: 504px
+					margin-top: auto
+					img
+						width: 100%
+						height: 100%
+						object-fit: cover
+						object-position: top
+
+
+.grid
+	&-row
+		@extend %df
+		padding: 8px 0
+		justify-content: space-around
+		border-bottom: 1px solid rgb($neutral-300)
+		&:first-child
+			padding-top: 0
+		&:last-of-type,&.last
+			border-bottom: none
+	&-title
+		font: 1em $f_reg
+		color: #5E6278
+	&.correct,&.incorrect
+		.marker
+			padding: 2px 2px 2px 12px
+			border-radius: 12px
+			font: $fz16 $p_reg
+			svg
+				+wh(20px)
+				margin: 0
+		.grid-button
+			background-color: rgba($neutral-200,.2)
+			color: rgba($neutral-600,.2)
+			&.active
+				color: rgb($neutral-600)
+				background-color: rgba(239,242,245,.2)
+				box-shadow: inset 0 0 4px rgba(0,0,0,.2)
+	&.correct
+		.marker
+			@extend %dfi
+			background-color: rgb($green-light)
+			color: rgb($green)
+			svg
+				fill: rgb($green)
+			& + .grid-row
+				.grid-input
+					background-color: rgb($green-light)
+					border-color: rgb($green)
+					span
+						color: rgb($green)
+	&.incorrect
+		.marker
+			@extend %dfi
+			background-color: rgb($red-light)
+			color: rgb($red)
+			svg
+				fill: rgb($red)
+			& + .grid-row
+				.grid-input
+					background-color: rgb($red-light)
+					border-color: rgb($red)
+					span
+						color: rgb($red)
+	&-col
+		@extend %dfi
+		flex-direction: column
+	&-input
+		@extend %dfa
+		+wh(100%,48px)
+		justify-content: space-around
+		border-radius: 8px
+		border: 1px solid rgb($neutral-300)
+		span
+			@extend %dfc
+			+wh(32px)
+	&-button
+		@extend %dfc
+		+wh(32px)
+		border-radius: 6px
+		background-color: rgb($neutral-300)
+		color: rgb($neutral-600)
+		&.active
+			background-color: rgb($blue)
+			color: rgb($white)
+		&.high
+			height: 356px
+	&-row
+		&.ans
+			.grid-button.active
+				box-shadow: none
+
+
+.skill
+	&-level
+		&-list
+			@extend %dfi
+			@extend %fw
+		&-item
+			@extend %dfa
+			@extend %fdc
+			flex: 0 0 calc(50% - 10px)
+			margin-bottom: 20px
+			&.green
+				.img
+					background-color: rgb($green-light)
+				svg
+					fill: rgb($green)
+				.link span
+					color: rgb($green)
+					&:after
+						background-color: rgb($green)
+			&.blue
+				.img
+					background-color: rgb($blue-light)
+				svg
+					fill: rgb($blue)
+				.link span
+					color: rgb($blue)
+					&:after
+						background-color: rgb($blue)
+			&.violet
+				.img
+					background-color: rgb($viol-light)
+				svg
+					fill: rgb($viol)
+				.link span
+					color: rgb($viol)
+					&:after
+						background-color: rgb($viol)
+			&.turquoise
+				.img
+					background-color: rgb($turquoise-light)
+				svg
+					fill: rgb($turquoise)
+				.link span
+					color: rgb($turquoise)
+					&:after
+						background-color: rgb($turquoise)
+			.img
+				@extend %dfc
+				+wh(64px)
+				margin-bottom: 18px
+				border-radius: 12px
+				svg
+					+wh(42px)
+			.link
+				@extend %dfa
+				@extend %fdc
+				font-family: $f_reg
+				span
+					line-height: $fz24
+					position: relative
+					&:after
+						+af
+						+wh(100%,1px)
+						position: absolute
+						left: 0
+						bottom: 4px
+
+.skills
+	&-level
+		&-title
+			margin-top: 20px
+			font-size: $fz16
+			font-family: $f_reg
+			color: rgb($neutral-700)
+		&-subtitle
+			font-size: 1em
+			color: rgb($neutral-600)
+			font-family: $f_bold
+			line-height: $fz20
+		&-list
+			@extend %df
+			padding-top: 20px
+			flex-wrap: wrap
+			justify-content: space-between
+		&-item
+			@extend %df
+			@extend %fdc
+			margin-bottom: 20px
+			justify-content: space-between
+			position: relative
+		&-role
+			color: rgb($neutral-400)
+			font-size: $fz12
+			font-family: $f_bold
+			position: absolute
+			left: 5px
+			bottom: 37px
+			span
+				display: block
+				transform: rotate(-90deg)
+				transform-origin: left
+		&-graphic
+			&-cont
+				@extend %df
+				width: 242px
+				height: 280px
+				margin-top: 20px
+				padding-left: 20px
+				align-items: flex-end
+			&-gradations
+				@extend %df
+				@extend %fdc
+				margin-right: 13px
+				margin-bottom: auto
+				font-family: $f_bold
+				font-size: $fz12
+				color: rgb($neutral-400)
+				span
+					@extend %dfa
+					width: 34px
+					margin-bottom: 18px
+					line-height: $fz12
+					position: relative
+					&:after
+						+af
+						+wh(175px,0)
+						border-top: 1px dashed rgb($neutral-400)
+						position: absolute
+						left: 47px
+					&:last-child
+						margin-bottom: 0
+		&-values
+			@extend %df
+			width: 100%
+			align-items: flex-end
+			justify-content: space-around
+		&-unit
+			@extend %dfa
+			@extend %fdc
+			max-width: 25%
+		&-value
+			width: 6px
+			background-color: rgb($viol)
+			border-radius: 3px 3px 0 0
+			position: relative
+			z-index: 1
+			&.count-3
+				width: 8px
+				border-radius: 4px 4px 0 0
+			&.count-2
+				width: 16px
+				border-radius: 8px 8px 0 0
+			&.blue
+				background-color: rgb($blue)
+			&.blue-light
+				background-color: rgb($blue-light)
+			&.gold
+				background-color: rgb($gold)
+			&.gold-light
+				background-color: rgb($gold-light)
+			&.turquoise
+				background-color: rgb($turquoise)
+			&.turquoise-light
+				background-color: rgb($turquoise-light)
+			&-title
+				@extend %df
+				height: 48px
+				align-items: flex-end
+				font-family: $f_bold
+				color: rgb($neutral-400)
+				font-size: $fz12
+				text-transform: uppercase
+			&-row
+				@extend %df
+				width: 40px
+				justify-content: space-between
+				align-items: flex-end
+
+
+.achievements
+	&-list
+		@extend %df
+		@extend %fw
+	&-item
+		width: calc((100% - 40px) / 3)
+		border-radius: 4px
+		overflow: hidden
+		margin-bottom: 20px
+		margin-right: 20px
+		&:nth-child(3n)
+			margin-right: 0
+		&.blue
+			.img
+				background-color: rgb($blue-light)
+			svg
+				fill: rgb($blue-dark)
+			.text
+				background-color: rgb($blue-dark)
+		&.brown
+			.img
+				background-color: rgb($brown-light)
+			svg
+				fill: rgb($brown-dark)
+			.text
+				background-color: rgb($neutral-800)
+		&.green
+			.img
+				background-color: rgb($green-light)
+			svg
+				fill: rgb($green-dark)
+			.text
+				background-color: rgb($green-dark)
+		&.orange
+			.img
+				background-color: rgb($orange-light)
+			svg
+				fill: rgb($orange)
+			.text
+				background-color: rgb($orange)
+		&.red
+			.img
+				background-color: rgb($red-light)
+			svg
+				fill: rgb($red)
+			.text
+				background-color: rgb($red)
+		&.violet
+			.img
+				background-color: rgb($viol-light)
+			svg
+				fill: rgb($viol)
+			.text
+				background-color: rgb($viol)
+		&[disabled]
+			opacity: .3
+	.img
+		@extend %dfc
+		+wh(100%,48px)
+		svg
+			+wh(32px,33.6px)
+	.text
+		padding: 2px
+		border-radius: 4px
+		text-align: center
+		span
+			font-family: $f_bold
+			color: rgb($neutral-100)
+
+
+.stars
+	&-row
+		padding-top: 16px
+		.circle
+				margin-bottom: 20px
+	&-info
+		&-item
+			@extend %dfa
+			margin-top: 8px
+			&:first-child
+				margin-top: 0
+			&.orange
+				.stars-info-img
+					background-color: rgb($orange-light)
+					svg
+						fill: rgb($orange)
+			&.red
+				.stars-info-img
+					background-color: rgb($red-light)
+					svg
+						fill: rgb($red)
+			&.green
+				.stars-info-img
+					background-color: rgb($green-light)
+					svg
+						fill: rgb($green)
+			&.blue
+				.stars-info-img
+					background-color: rgb($blue-light)
+					svg
+						fill: rgb($blue)
+			&.violet
+				.stars-info-img
+					background-color: rgb($viol-light)
+					svg
+						fill: rgb($viol)
+			&.turquoise
+				.stars-info-img
+					background-color: rgb($turquoise-light)
+					svg
+						fill: rgb($turquoise)
+			&.gold
+				.stars-info-img
+					background-color: rgb($gold-light)
+					svg
+						fill: rgb($gold)
+		&-img
+			+wh(36px)
+			flex: 0 0 36px
+			margin-right: 8px
+			padding: 10px
+			border-radius: 12px
+			svg
+				+wh(100%)
+		&-text
+			font-size: 12px
+			text-align: left
+			strong
+				display: block
+				font-family: $f_reg
+			span
+				font-family: $f_bold
+				color: rgb($neutral-400)
+
+.circle
+	@extend %dfc
+	+wh(268px)
+	overflow: hidden
+	position: relative
+	&>svg
+		+wh(268px)
+		transform: rotate(90deg)
+	circle
+		r: 106
+		stroke-width: 28px
+		fill: none
+		&.orange
+			stroke: rgb($orange)
+		&.red
+			stroke: rgb($red)
+		&.green
+			stroke: rgb($green)
+		&.blue
+			stroke: rgb($blue)
+		&.violet
+			stroke: rgb($viol)
+		&.turquoise
+			stroke: rgb($turquoise)
+		&.gold
+			stroke: rgb($gold)
+		&.turquoise-light
+			stroke: rgb($turquoise-light)
+		&.gold-light
+			stroke: rgb($gold-light)
+		&.blue-light
+			stroke: rgb($blue-light)
+	&-count
+		@extend %dfc
+		@extend %fdc
+		+wh(100%)
+		position: absolute
+		padding: 33px
+		&-icon
+			+wh(48px)
+			margin-bottom: 4px
+			fill: rgb($gold)
+		&-title
+			font-family: $f_bold
+			font-size: $fz22
+		&-text
+			font-family: $f_bold
+			line-height: $fz21
+			color: rgb($neutral-500)
+			font-size: 1em
+			text-align: center
+
+.stats
+	.stats
+		&-subtitle
+			margin-top: 7px
+	.stars
+		&-info
+			&-img
+				+wh(44px)
+				flex: 0 0 44px
+			&-text
+				font-size: 1em
+				strong
+					color: rgb($neutral-900)
+				span
+					color: rgb($neutral-600)
+	.circle
+		margin: 20px auto
+.stats,.perItemBlock
+	.circle
+			+wh(200px)
+			flex: 0 0 200px
+			&>svg
+				+wh(200px)
+				transform: rotate(90deg)
+			circle
+				r: 93
+				stroke-width: 14px
+				fill: none
+
+.stat
+	&-block
+		&-title
+			font-size: 1em
+			font-family: $p_reg
+			color: rgb($neutral-600)
+	&-list
+		@extend %df
+		align-items: flex-start
+		overflow-x: scroll
+	&-col
+		width: 170px
+		flex: 0 0 170px
+		margin-right: 16px
+		&:last-child
+			margin-right: 0
+		&-list
+			@extend %df
+			@extend %fdc
+		&-item
+			margin-top: 12px
+			padding: 16px
+			border-radius: 6px
+			text-align: center
+			&.turquoise
+				background-color: rgb($turquoise-light)
+				.stat-col-item-text
+					color: rgb($turquoise)
+			&.blue
+				background-color: rgb($blue-light)
+				.stat-col-item-text
+					color: rgb($blue)
+			&.viol-blue
+				background-color: rgb($viol-blue-light)
+				.stat-col-item-text
+					color: rgb($viol-blue)
+			&.red
+				background-color: rgb($red-light)
+				.stat-col-item-text
+					color: rgb($red)
+			&.viol
+				background-color: rgb($viol-light)
+				.stat-col-item-text
+					color: rgb($viol)
+			&.brown
+				background-color: rgb($brown-light)
+				.stat-col-item-text
+					color: rgb($brown)
+			&.maroon
+				background-color: rgb($maroon-light)
+				.stat-col-item-text
+					color: rgb($maroon)
+			&-title
+				font-family: $f_bold
+				font-size: $fz28
+				color: rgb($neutral-900)
+				line-height: 40px
+			&-text
+				max-width: 80px
+				margin: 0 auto
+				font-family: $f_reg
+				line-height: $fz24
+				font-size: 1em
+
+
+.answer
+	&-list
+		margin-top: 32px
+	&-item
+		@extend %dfi
+		width: 100%
+		margin-bottom: 16px
+		padding-right: 8px
+		border-radius: 12px
+		&.active
+			background-color: rgb($blue-light)
+			.answer-value
+				color: rgb($blue-text)
+		&[disabled],&.wrong
+			.answer
+				&-variant
+					border-color: rgb($answer-disabled)
+					color: rgb($answer-disabled)
+				&-value
+					color: rgb($neutral-400)
+		&.wrong
+			.answer-review-icon
+				display: none
+		&[disabled]
+			.answer
+				&-value
+					text-decoration: line-through
+		&.correct,&.incorrect,&.another-correct
+			padding-right: 2px
+		&.correct,&.incorrect
+			padding-bottom: 4px
+		&.correct
+			background-color: rgb($green-light)
+			.answer
+				&-variant
+					border-color: rgb($green-dark)
+				&-variant,&-value
+					color: rgb($green-dark)
+				&-review-icon
+					fill: rgb($green-dark)
+		&.incorrect
+			background-color: rgb($red-light)
+			.answer
+				&-variant
+					border-color: rgb($red)
+				&-variant,&-value
+					color: rgb($red)
+				&-review-icon
+					fill: rgb($red)
+		&.another-correct
+			.answer
+				&-value
+					color: rgb($neutral-900)
+				&-variant
+					border-color: rgb($green-dark)
+					color: rgb($green-dark)
+				&-review-icon
+					fill: rgb($green-dark)
+	&-desc
+		width: 100%
+		padding-top: 4px
+		padding-left: 36px
+		font-size: $fz12
+		color: rgb($neutral-600)
+	&-review-icon
+		svg
+			+wh(20px)
+	&-button
+		@extend %dfa
+		+w(100%)
+		font-family: $p_reg
+	&-value
+		color: rgb($neutral-900)
+		font-size: $fz13
+		text-align: left
+	&-variant
+		@extend %dfc
+		+wh(24px)
+		flex: 0 0 24px
+		margin-right: 12px
+		border-radius: 100%
+		border: 2px solid rgb($blue-text)
+		text-transform: uppercase
+		color: rgb($blue-text)
+	&-wrong
+		width: 16px
+		flex: 0 0 16px
+		border-radius: 100%
+		svg
+			+wh(16px)
+			display: block
+			fill: rgb($neutral-600)
+
+
+.questions
+	&-cont
+		@extend %df
+		padding-right: 20px
+		flex-direction: column
+	&-list
+		@extend %dfi
+		flex-wrap: wrap
+		&-title
+			margin-top: 24px
+			font-size: $fz12
+			font-family: $p_reg
+			color: rgb($neutral-700)
+			&:first-child
+				margin-top: 0
+		&:last-of-type
+			margin-bottom: auto
+	&-item
+		@extend %dfa
+		width: 100px
+		margin-top: 14px
+		justify-content: flex-end
+		font-family: $p_reg
+		font-size: $fz12
+		svg
+			&:last-child
+				fill: rgb($blue)
+		&.checked
+			svg
+				&:last-child
+					display: block
+				&:first-child
+					display: none
+		&.correct
+			.questions-variant
+				background-color: rgb($green-light)
+				color: rgb($green-dark)
+		&.wrong
+			.questions-variant
+				background-color: rgb($red-light)
+				color: rgb($red)
+	&-nav
+		&-list
+			margin: 16px 0 24px
+			display: flex
+		.questions-list-title
+			color: rgb($neutral-400)
+			line-height: $fz19
+		&-btn
+			height: 34px
+			margin-right: 30px
+			display: flex
+			align-items: flex-start
+			text-align: left
+			font-size: $fz12
+			color: rgb($neutral-400)
+			font-family: $f_bold
+			line-height: $fz16
+			position: relative
+			&:last-child
+				margin-right: 0
+			&:after
+				+af
+				+wh(100%,2px)
+				position: absolute
+				bottom: 0
+			&.active
+				color: rgb($neutral-800)
+				&:after
+					background-color: rgb($blue)
+	&-number
+		width: 20px
+		text-align: center
+	&-variant
+		@extend %dfc
+		+wh(calc(100% - 48px),24px)
+		margin: 0 4px
+		border-radius: 8px
+		background-color: rgb($neutral-200)
+	&-bookmark
+		svg
+			+wh(20px)
+			&:last-child
+				display: none
+	&-button
+		@extend %dfa
+		margin: 20px auto 0
+		padding: 4px 8px
+		background-color: rgb($blue)
+		border-radius: 8px 8px 0 0
+		border: 1px solid rgb($blue)
+		font-size: $fz12
+		color: rgb($white)
+		font-family: $f_bold
+		position: sticky
+		bottom: 0
+		svg
+			+wh(12px)
+			stroke: rgb($white)
+		span
+			margin: 0 8px
+
+
+.modal
+	width: 90vw
+	&-title
+		@extend %dfa
+		padding: 4px 0
+		font-family: $f_reg
+		color: rgb($neutral-900)
+		&-icon
+			@extend %dfc
+			+wh(32px)
+			margin-right: 12px
+			border-radius: 8px
+			background-color: rgb($blue-light)
+			svg
+				+wh(20px)
+				fill: rgb($blue)
+	&-text
+		color: rgb($neutral-600)
+		font-family: $p_reg
+		line-height: $fz24
+		&-cont
+			height: 70vh
+			max-height: 638px
+			padding: 24px
+			background-color: rgb($neutral-100)
+			overflow: auto
+	&-text,&-title,&-area,.check-list
+		margin-bottom: 24px
+	&-row
+		@extend %dfa
+		@extend %fdc
+		.button,.button-blue
+			width: 100%
+			margin-bottom: 16px
+			justify-content: center
+			&:last-child
+				margin-bottom: 0
+		&.end
+			justify-content: flex-end
+	&-area
+		+wh(100%,calc(100vh - 270px))
+		max-height: 140px
+		padding: 20px
+		background-color: rgb($neutral-200)
+		resize: none
+		border: none
+	iframe
+		width: 100%
+		height: 180px
+	&-blue
+		margin-top: 16px
+		padding: 16px
+		display: flex
+		background-color: rgb($blue-light)
+		border-radius: 6px
+		&:first-child
+			margin-top: 0
+		&:after
+			+wh(100%,2px)
+			+af
+			background-color: rgb($neutral-200)
+			position: absolute
+			left: 0
+			top: 75px
+		&-icon
+			margin-right: 16px
+			&,svg
+				+wh(32px)
+			svg
+				fill: rgb($blue)
+		&-title
+			margin-bottom: 4px
+			font-weight: 600
+			color: rgb($neutral-800)
+			font-size: $fz16
+		&-text
+			color: rgb($neutral-600)
+			font-size: $fz16
+		&.new
+			.modal
+				&-blue-icon
+					position: relative
+					&:after
+						+af
+						+wh(8px)
+						border-radius: 100%
+						background-color: rgb($red)
+						position: absolute
+						top: 0
+						left: 0
+		&-cont
+			padding-top: 85px
+			.modal-title
+				position: absolute
+				top: 25px
+	&-block
+		padding: 24px
+	&-cancel
+		&-area
+			margin-top: 24px
+			border-radius: 9px
+		&-button
+			margin: 0 auto 8px
+			&:last-child
+				margin-bottom: 0
+			&.button
+				color: rgb($neutral-400)
+				background-color: transparent
+.modaler
+	&-content
+		max-width: 80vw
+		max-height: 90vh
+
+
+.check
+	&-list
+		input:checked ~ .check-label
+			.check-label-icon
+				&:after
+					background-color: rgb($blue)
+	&-item
+		margin-bottom: 20px
+		&:last-child
+			margin-bottom: 0
+	&-label
+		@extend %dfa
+		&-icon
+			@extend %dfc
+			+wh(24px)
+			flex: 0 0 24px
+			margin-right: 12px
+			background-color: rgb($neutral-200)
+			&:after
+				@extend %transition
+				+af
+				+wh(12px)
+			&,&:after
+				border-radius: 100%
+		&-text
+			font-family: $f_bold
+			color: rgb($neutral-700)
+
+
+.login
+	position: relative
+	&-title
+		font-size: calc(26em / 14)
+		font-family: $f_bold
+	&-subtitle
+		margin-top: 8px
+		font-family: $f_bold
+		text-align: center
+		&>span
+			margin-right: 5px
+			line-height: 24px
+			color: rgb($neutral-400)
+			&:not(:first-child)
+				display: block
+	.link
+		color: rgb($blue-text)
+		font-family: $f_bold
+	&-left,&-right,&-full
+		min-height: calc(100vh)
+	&-left,&-success
+		align-items: center
+		justify-content: flex-end
+		flex-direction: column
+		background-color: #e5e5e5
+		display: none
+		.login-main
+			&-title
+				margin-bottom: 32px
+	&-left
+		&-logo
+			margin-bottom: 16px
+		&-img
+			width: 100%
+			max-width: 500px
+	&-main
+		&-title,&-subtitle
+			text-align: center
+		&-title
+			font-size: calc(24em/14)
+			font-family: $f_bold
+		&-subtitle
+			display: flex
+			flex-direction: column
+			align-items: center
+			font-size: calc(18em/14)
+			color: rgb($neutral-400)
+			font-family: $f_reg
+			span
+				line-height: 33px
+	&-right
+		@extend %dfc
+		padding: 40px 0 70px
+		background-color: rgb($white)
+		.button
+			&-blue,&-lightblue
+				width: 100%
+	&-form
+		@extend %df
+		@extend %fdc
+		@extend %dfa
+	.button
+		&-blue,&-lightblue
+			height: 48px
+			justify-content: center
+			svg
+				margin-right: 12px
+		&-blue
+			background-color: rgb($blue-text)
+	&-span
+		margin: 20px auto
+		font-family: $f_bold
+		color: rgb($neutral-400)
+	&-bottom
+		@extend %dfc
+		width: 100%
+		position: absolute
+		bottom: 32px
+		.link
+			margin-right: 40px
+			color: rgb($neutral-400)
+			&:last-child
+				margin-right: 0
+	&-full
+		display: flex
+		flex: 0 0 100%
+	&-success
+		background-color: rgb($white)
+		.login-left-logo
+			margin-bottom: -20px
+		.login-main
+			&-title,&-subtitle
+				margin-bottom: auto
+		.button-blue
+			margin-bottom: auto
+		&-img
+			width: 300px
+		&-bgc
+			display: none
+	&-checkbox
+		margin-top: 64px
+		font-family: $f_bold
+		color: rgb($neutral-400)
+
+
+.form
+	&-block
+		@extend %df
+		@extend %fdc
+		width: 300px
+		margin-top: 32px
+		&.row
+			flex-direction: row
+			.button-blue,.button-lightblue
+				margin-left: 16px
+				&:first-child
+					margin-left: 0
+		&-comment
+			margin-top: 32px
+			font-size: calc(12em/14)
+			color: $neutral-400
+	&-label
+		font-family: $f_bold
+		color: rgb($neutral-800)
+		&-row
+			@extend %dfi
+			padding-bottom: 12px
+		&-hr
+			+wh(100%,1px)
+			display: block
+			margin: 35px 0
+			border: 0
+			background-color: #E5E5E5
+		&-desc
+			margin: 10px 0 0 10px
+			display: block
+			font: 12px $f_reg
+			color: rgb($neutral-600)
+	&-input
+		@extend %transition
+		height: 54px
+		width: 100%
+		padding: 0 15px
+		border-radius: 6px
+		background-color: rgb($neutral-100)
+	&-checkbox
+		&-row
+			@extend %df
+			@extend %dfa
+			&>span,&>a,&>label
+				margin-right: 5px
+		&-icon
+			@extend %dfc
+			@extend %transition
+			+wh(24px)
+			margin-right: 12px
+			border-radius: 6px
+			background-color: rgb($neutral-100)
+			&:after
+				+af
+				+wh(12px)
+				border-radius: 5px
+		&-label
+			@extend %df
+			@extend %dfa
+			&-text
+				font-family: $f_bold
+				color: rgb($neutral-700)
+		&:checked ~ .form-checkbox-icon:after
+			background-color: rgb($blue)
+
+
+.blue-icon
+	+wh(48px)
+	padding: 10px
+	background-color: rgb($blue)
+	border-radius: 12px
+	svg
+		+wh(28px)
+		fill: #fff
+	&.reverse
+		background-color: rgb($neutral-100)
+		svg
+			fill: rgb($blue)
+
+
+.remove-btn
+	@extend %dfc
+	+wh(100%,42px)
+	font-family: $f_bold
+	background-color: rgb($neutral-100)
+	margin-top: 10px
+	svg
+		+wh(14px)
+		display: none
+
+
+.tbl
+	margin-top: 24px
+	.table
+		border-collapse: collapse
+	&-item
+		@extend %dfa
+		padding: 12px
+		&.right
+			justify-content: flex-end
+			margin-left: auto
+		&.actions
+			.button-blue
+				padding: 7px 12px
+				fill: rgb($blue-text)
+				&.profile
+					max-width: 32px
+					padding: 0
+				svg
+					+w(11px)
+	&-head
+		.tbl-item
+			background-color: rgb($neutral-200)
+			text-transform: uppercase
+			&,span
+				font-family: $f_bold
+				font-size: 12px
+				line-height: 16px
+				letter-spacing: 0.03em
+				color: rgb($neutral-400)
+				white-space: nowrap
+		th:first-child .tbl-item,&>.tbl-item:first-child
+			border-radius: 12px 0 0 12px
+		th:last-child .tbl-item,&>.tbl-item:last-child
+			border-radius: 0 12px 12px 0
+	&-sort
+		&-btns
+			@extend %dfa
+			@extend %fdc
+			padding-left: 4px
+			padding-bottom: 3px
+		&-btn
+			@extend %df
+			+wh(9px,6px)
+			padding: 1px
+			align-items: flex-start
+			svg
+				+wh(100%)
+				stroke: rgb($neutral-400)
+			&.top
+				align-items: flex-end
+				svg
+					transform: rotate(180deg)
+div.tbl-head
+	display: none
+
+.users
+	&-photo-icon
+		@extend %dfc
+		+wh(36px)
+		flex: 0 0 36px
+		margin-right: 12px
+		border-radius: 12px
+		background-color: rgb($neutral-200)
+		img
+			height: 30px
+			margin-top: auto
+	&-info
+		@extend %df
+		@extend %fdc
+		align-items: flex-start
+		&-name
+			font-size: $fz16
+			color: rgb($neutral-800)
+		&-email
+			font-size: $fz12
+			color: rgb($neutral-400)
+			font-family: $f_bold
+		&-name,&-email
+			white-space: nowrap
+	&-info-name,&-date
+		font-family: $f_bold
+	&-date
+		line-height: $fz20
+		color: rgb($neutral-800)
+	&-course,&-date
+		white-space: nowrap
+	&-course
+		padding: 4px 9px
+		border-radius: 6px
+		margin-right: 8px
+		font-family: $f_bold
+		font-size: $fz12
+		&.turquoise
+			color: #00AFAF
+			background-color: #DCFDFD
+		&.blue
+			color: #366CF9
+			background-color: #F1F5FF
+		&.violet
+			color: #8950FC
+			background-color: #EEE5FF
+		&.brown
+			color: #58244B
+			background-color: #FBF1F8
+		&.red
+			color: #F64E60
+			background-color: #FFE2E5
+		&.gold
+			color: #F1BC00
+			background-color: #FFF8DD
+	&-btn
+		@extend %dfc
+		height: 32px
+		min-width: 32px
+		margin-right: 12px
+		padding: 7px
+		background-color: rgb($neutral-200)
+		border-radius: 6px
+		color: rgb($neutral-600)
+		font-size: 12px
+		font-family: $f_bold
+		&:last-child
+			margin-right: 0
+		svg
+			+wh(18px)
+		&.profile
+			padding: 7px 12px
+
+
+.tips
+	max-width: 652px
+	margin: 12px auto 0
+	&-list
+		margin-top: 20px
+		margin-bottom: 34px
+		&:last-child
+			margin-bottom: 0
+	&-item
+		@extend %dfa
+		margin-bottom: 14px
+		padding-bottom: 14px
+		border-bottom: 1px dashed rgb($neutral-400)
+		&-img
+			margin-right: 8px
+			svg
+				+wh(24px)
+				fill: rgb($blue)
+
+
+.hidden
+	display: none
+	
+	
+.profile
+	&-img
+		@extend %dfc
+		+wh(85px)
+		+bdrs(100%)
+		flex: 0 0 85px
+		background-color: #F1FAFF
+		color: rgb($blue-text)
+		font: 32px $f_bold
+		&-row
+			@extend %dfa
+			margin-bottom: 32px
+		&-desc
+			margin-left: 16px
+			font-size: 12px
+			line-height: 16px
+			color: #A1A5B7
+	&-form
+		&-value
+			font: 14px 'Roboto-Medium'
+			color: #5E6278
+		&-row
+			margin-bottom: 1em
+			.select
+				min-width: 228px
+			&-input
+				width: 100%
+		&-label
+			font: 15px $f_bold
+			margin-bottom: 1em
+		&-title
+			margin-bottom: 25px
+			
+
+.table
+	+w(100%)
+	td
+		border-bottom: 1px dashed #E4E6EF
+	&-cont
+		min-height: 40px
+		width: 100%
+		overflow: auto
+	&-admin
+		&-title
+			@extend %dfa
+
+
+.adding
+	&-list
+		padding-top: 32px
+		&-title
+			font: 16px $f_bold
+			line-height: 20px
+		&-subtitle
+			font: 12px $f_bold
+			margin-top: 6px
+			color: #B5B5C3
+		&-item
+			@extend %dfa
+			margin-bottom: 38px
+			text-align: left
+			&:last-child
+				.adding-list-digit:after
+					display: none
+			&.active
+				.adding-list-digit
+					background-color: #00A3FF
+					color: #fff
+		&-digit
+			+wh(40px)
+			@extend %dfc
+			margin-right: 20px
+			font-family: $f_reg
+			color: rgb($blue-text)
+			border-radius: 9px
+			background-color: #F1FAFF
+			position: relative
+			&:after
+				+af
+				+wh(0px,50px)
+				position: absolute
+				top: 100%
+				border: 1px dashed #E4E6EF
+			svg
+				+wh(19px,14px)
+				fill: rgb($blue)
+	&-title
+		font: 26px $f_bold
+		letter-spacing: -2%
+	&-section
+		margin-top: 32px
+	&-inpt
+		width: 100%
+		margin-bottom: 16px
+		&-row
+			@extend %dfi
+			column-gap: 16px
+	&-radio
+		&:checked+.adding-label-have
+			color: #5E6278
+		&:checked+.adding-label-have:before
+			background-color: #fff
+			border: 2px solid rgb($blue-text)
+		&:checked+.adding-label-have:after
+			background-color: rgb($blue-text)
+		&-row
+			@extend %dfa
+			margin-bottom: 32px
+			.adding-select
+				+w(299px)
+	&-label
+		font: 14px $f_bold
+		&-have
+			@extend %dfa
+			min-width: 185px
+			margin-right: 16px
+			color: #B5B5C3
+			position: relative
+			&:before,&:after
+				+af
+				+bdrs(24px)
+				box-sizing: border-box
+				transition: .35s ease
+			&:before
+				+wh(24px)
+				flex: 0 0 24px
+				margin-right: 12px
+				background-color: #F3F6F9
+				border: 1px solid #EBEDF3
+			&:after
+				+wh(16px)
+				position: absolute
+				left: 4px
+	&-buttons
+		@extend %dfa
+		margin-top: 12px
+		column-gap: 10px
+	&-button
+		+wh(100%,56px)
+		+bdrs(6px)
+		margin-bottom: 10px
+		font: 18px $f_bold
+		border: 1px dashed rgb($neutral-400)
+		background-color: rgba(245,248,250,.4)
+		&.active
+			color: rgb($blue-text)
+			border-color: rgb($blue-text)
+		&.disabled
+			color: rgb($neutral-400)
+		&:last-child
+			margin-bottom: 0
+	&-plan
+		+w(100%)
+		+bdrs(18px)
+		@extend %dfc
+		padding: 32px
+		flex-direction: column
+		border: 1px dashed rgb($neutral-400)
+		background-color: rgba(245,248,250,.4)
+		margin-bottom: 20px
+		&.active
+			border-color: rgb($blue-text)
+			background-color: rgb(241,250,255,.4)
+			.adding-plan-title
+				color: rgb($blue-text)
+		&-row
+			margin-top: 12px
+		&-title
+			font: 22px $f_bold
+		&-subtitle
+			font: 14px $f_bold
+			color: rgb($neutral-400)
+		&-price
+			margin-top: 20px
+			em
+				font: 16px $f_bold
+				color: rgb($blue-text)
+			strong
+				font: 38px $f_bold
+				color: rgb($blue-text)
+			i
+				font: 12px $f_reg
+				color: rgb($neutral-400)
+		&-list
+			margin-top: 14px
+		&-item
+			@extend %dfa
+			margin-bottom: 16px
+			span
+				+w(100%)
+				font: 14px $f_bold
+				line-height: 20px
+				display: inline-block
+			&:after
+				+af
+				+wh(18px)
+				+bdrs(18px)
+				margin-left: 29px
+				background-color: rgba(80,205,137,.3)
+				background-repeat: no-repeat
+				background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQoJPHBhdGggZD0iTTQuNTMwMzMgMTIuOTY5N0M0LjIzNzQ0IDEyLjY3NjggMy43NjI1NiAxMi42NzY4IDMuNDY5NjcgMTIuOTY5N0MzLjE3Njc4IDEzLjI2MjYgMy4xNzY3OCAxMy43Mzc0IDMuNDY5NjcgMTQuMDMwM0w3Ljk2OTY3IDE4LjUzMDNDOC4yNjI1NiAxOC44MjMyIDguNzM3NDQgMTguODIzMiA5LjAzMDMzIDE4LjUzMDNMMjAuMDMwMyA3LjUzMDMzQzIwLjMyMzIgNy4yMzc0NCAyMC4zMjMyIDYuNzYyNTYgMjAuMDMwMyA2LjQ2OTY3QzE5LjczNzQgNi4xNzY3OCAxOS4yNjI2IDYuMTc2NzggMTguOTY5NyA2LjQ2OTY3TDguNSAxNi45MzkzTDQuNTMwMzMgMTIuOTY5N1oiIGZpbGw9IiM1MENEODkiLz4NCjwvc3ZnPg==)
+				background-position: center
+				background-size: 13px
+			&.feat:after
+				background-color: rgba(161,165,183,.3)
+				background-size: 7px
+				background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMiAxMiI+DQoJPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMC45MzM2IDAuMjkyODk0QzEwLjU0MzEgLTAuMDk3NjMwNyA5LjkwOTkxIC0wLjA5NzYzMTQgOS41MTkzOCAwLjI5Mjg5M0w1Ljc5Mjc1IDQuMDE5NTNMMi4wNjYyOSAwLjI5MzA2OEMxLjY3NTc2IC0wLjA5NzQ1NTkgMS4wNDI2IC0wLjA5NzQ1NTkgMC42NTIwNzMgMC4yOTMwNjhMMC4yOTI4OTMgMC42NTIyNDlDLTAuMDk3NjMxMyAxLjA0Mjc3IC0wLjA5NzYzMDggMS42NzU5NCAwLjI5Mjg5MyAyLjA2NjQ2TDQuMDE5MzUgNS43OTI5MkwwLjI5MzIzMSA5LjUxOTA0Qy0wLjA5NzI5MjkgOS45MDk1NyAtMC4wOTcyOTI5IDEwLjU0MjcgMC4yOTMyMzEgMTAuOTMzM0wwLjY1MjQxMiAxMS4yOTI0QzEuMDQyOTQgMTEuNjgzIDEuNjc2MSAxMS42ODMgMi4wNjY2MiAxMS4yOTI0TDUuNzkyNzUgNy41NjYzMkw5LjUxOTA0IDExLjI5MjZDOS45MDk1NyAxMS42ODMxIDEwLjU0MjcgMTEuNjgzMSAxMC45MzMzIDExLjI5MjZMMTEuMjkyNCAxMC45MzM0QzExLjY4MyAxMC41NDI5IDExLjY4MyA5LjkwOTc0IDExLjI5MjQgOS41MTkyMkw3LjU2NjE0IDUuNzkyOTJMMTEuMjkyOCAyLjA2NjI5QzExLjY4MzMgMS42NzU3NiAxMS42ODMzIDEuMDQyNiAxMS4yOTI4IDAuNjUyMDc0TDEwLjkzMzYgMC4yOTI4OTRaIiBmaWxsPSIjQTFBNUI3Ii8+DQo8L3N2Zz4=)
+	&-block
+		.button
+			&-blue
+				padding: 13px 26px
+				background-color: rgb($blue)
+				color: rgb($white)
+			&-green
+				background-color: rgb($green)
+	&-subtitle
+		font: 14px $f_reg
+		line-height: 20px
+		color: #B5B5C3
+		&.withmar
+			margin: 0 0 16px 0
+	&-avatar
+		margin-top: 16px
+		button
+			@extend %dfa
+		&-letter,&-link
+			font: 17px $f_bold
+			color: rgb($blue-text)
+		&-letter
+			@extend %dfc
+			+wh(80px)
+			+bdrs(80px)
+			background-color: #F1FAFF
+			margin-right: 20px
+			overflow: hidden
+			img
+				+wh(100%,70px)
+				margin-top: auto
+		input[type='file']
+			display: none
+	
+	&-text
+		margin: 16px 0
+		font: 12px $f_reg
+		color: rgb($neutral-600)
+	&-generate
+		@extend %dfa
+		margin: 37px 0 44px
+		font: 17px $f_bold
+		color: rgb($blue-text)
+		&:before
+			+af
+			+wh(20px)
+			+bg(20px,url('../img/generate.svg'))
+			margin: 0 12px 0 14px
+	&-select
+		height: 44px
+	&-inpt
+		.form-label-row
+			padding-bottom: 2px
+		.form-label
+			line-height: 20px
+	&-summary
+		&-title
+			font: 14px $f_bold
+			text-transform: uppercase
+			color: #7E8299
+			margin-right: 20px
+		&-btn
+			font: 16px $f_bold
+			color: rgb($blue-text)
+		&-list,&-item,&-table
+			margin-top: 24px
+		&-item
+			font: 12px $f_bold
+			color: #7E8299
+			strong
+				display: block
+				font: 14px $f_reg
+				color: #3F4254
+		&-table
+			+w(100%)
+			border-collapse: collapse
+			th,td
+				&:last-child
+					text-align: right
+			th
+				font: 12px $f_bold
+				color: #7E8299
+				text-align: left
+				padding: 8px 0
+			td
+				font: 14px $f_bold
+				padding: 24px 0
+				color: #3F4254
+				border-top: 1px solid #EFF2F5
+			&-list
+				li
+					@extend %dfi
+					margin-bottom: 16px
+				span
+					color: #7E8299
+		&-final
+			margin-top: 0
+			border-top: 1px solid rgb($neutral-200)
+		&-text
+			margin-top: 32px
+			font-size: $fz16
+			color: rgb($neutral-400)
+			a
+				color: rgb($blue-text)
+				position: relative
+				&:after
+					@extend %transition
+					+af
+					+wh(0,1px)
+					background-color: rgb($blue-text)
+					position: absolute
+					left: 50%
+					bottom: -2px
+				&:hover:after
+					width: 100%
+					left: 0
+
+
+	&-assign
+		&-body
+			.block
+				box-shadow: 0 0 30px rgba(56,71,109,.09)
+			.table-cont
+				max-height: 370px
+.level,.adding
+	&-buttons
+		flex-wrap: wrap
+
+
+.admin
+	padding-bottom: 48px
+	&-title
+		font-size: $fz18
+		font-family: $f_bold
+		color: rgb($black)
+	&-subtitle
+		font-family: $f_bold
+		color: rgb($neutral-400)
+		line-height: $fz21
+		font-size: $fz12
+	.section
+		&-button
+			font-size: $fz12
+	&-calendar
+		color: rgb($neutral-400)
+		font-family: $f_bold
+		font-size: $fz12
+		span
+			margin: 0 8px
+			color: rgb($neutral-600)
+		&-icon
+			+wh(20px)
+			flex: 0 0 20px
+			margin-right: 8px
+			fill: rgb($neutral-600)
+			svg
+				+wh(100%)
+	&-dashboard
+		&-table
+			td
+				border-top: 1px solid rgb($neutral-300)
+			td:first-child .admin-dashboard-table-td,th:first-child .admin-dashboard-table-th
+				padding-left: 0
+			td:last-child .admin-dashboard-table-td
+				padding-right: 0
+			&-th
+				padding: 0 25px 20px
+				font-family: $f_bold
+				font-size: $fz12
+				color: rgb($neutral-400)
+				text-transform: uppercase
+				text-align: left
+				white-space: nowrap
+			&-td
+				padding: 16px 25px
+				text-align: center
+				&.desc
+					@extend %df
+					@extend %fdc
+					text-align: left
+				strong
+					font-size: 1em
+					font-family: $f_reg
+					color: #464E5F
+					white-space: nowrap
+					&.green
+						color: rgb($green)
+					&.yellow
+						color: rgb($gold)
+					&.orange
+						color: rgb($orange)
+					&.red
+						color: rgb($red)
+				span
+					color: rgb($neutral-400)
+					font-family: $f_bold
+					font-size: $fz13
+			&-cont
+				width: 100%
+				margin: 20px 0
+				overflow-x: scroll
+	&-payment
+		&-subtitle
+			font-family: $f_bold
+			line-height: 30px
+			font-size: $fz16
+			color: rgb($neutral-700)
+
+	&-profile
+		&-line
+			width: 100%
+			height: 1px
+			background-color: #EBEDF3
+			margin: 32px 0
+		&-password
+			@extend %df
+			align-items: flex-start
+			flex-direction: column
+			&-title
+				color: #3F4254
+				font: $fz16 $f_bold
+				line-height: 20px
+			&-link,&-button
+				margin-top: 24px
+				padding: 11px 12px
+				svg
+					margin-right: 12px
+				span
+					font: $fz16 $f_bold
+					line-height: 20px
+			&-link
+				svg
+					+wh(16px,13px)
+					stroke: rgb($blue-text)
+				span
+					color: rgb($blue-text)
+			&-button
+				span
+					color: #7E8299
+				svg
+					+wh(16px)
+	&-block
+		&-graytitle
+			font: 18px $f_reg
+			line-height: 24px
+			color: rgb($neutral-400)
+			margin: 20px 0 32px
+
+
+
+
+.billing
+	&-inner
+		max-width: 587px
+		margin: auto
+	&-block
+		padding: 32px 0
+		border-bottom: 1px solid #EBEDF3
+		&:last-child
+			border-bottom: none
+		&-inner
+			margin-bottom: 24px
+	&-title
+		margin-bottom: 24px
+		font: 1em $f_reg
+		color: rgb($neutral-400)
+	&-item
+		margin-bottom: 24px
+		padding: 26px 32px
+		border-radius: 6px
+		border: 1px dashed rgb($neutral-400)
+		&-row
+			@extend %df
+			&.alc
+				align-items: center
+		&-title
+			font: $fz18 $f_bold
+			color: #3F4254
+		&-name
+			text-transform: uppercase
+		&-primary
+			margin-left: 12px
+			padding: 6px 11px
+			font: $fz12 $f_bold
+			color: rgb($green)
+			background-color: rgb($green-light)
+		&-body
+			padding-top: 14px
+			flex-wrap: wrap
+		&-info
+			@extend %df
+			margin-bottom: 10px
+			flex-direction: column
+			align-items: flex-start
+			text-align: left
+			font: $fz16 $f_bold
+			color: rgb($neutral-600)
+			line-height: 22px
+			strong
+				font: $fz16 $f_bold
+				color: #3F4254
+				text-transform: capitalize
+			strong, em, span
+				line-height: calc(22em / 16)
+			strong, em
+				white-space: nowrap
+		&-actions
+			width: 100%
+			flex-wrap: wrap
+			button
+				width: 100%
+		&-card
+			&-img
+				@extend %dfc
+				+wh(80px,48px)
+				margin-bottom: 10px
+				padding: 9px 16px
+				background-color: #F6F8FA
+				border-radius: 6px
+
+
+.parent
+	.df
+		width: 100%
+	&-table
+		&-avatar
+			@extend %dfc
+			+wh(36px)
+			margin-right: 12px
+			border-radius: 18px
+			background-color: rgb($blue-light)
+			span
+				color: rgb($blue-text)
+				font: $fz16 $f_bold
+		&-students
+			@extend %df
+			&-block
+				@extend %df
+				@extend %fdc
+				align-items: flex-start
+			&-count
+				font-family: $f_reg
+				font-size: $fz12
+				color: rgb($neutral-500)
+				white-space: nowrap
+			&-empty
+				padding: 6px 9px
+				font-family: $f_reg
+				color: rgb($orange)
+				background-color: rgb($orange-light)
+				border-radius: 6px
+		&-student
+			@extend %dfc
+			+wh(24px)
+			border: 2px solid #fff
+			border-radius: 12px
+			background-color: rgb($neutral-200)
+			overflow: hidden
+			img
+				+wh(90%)
+				object-fit: contain
+				object-position: bottom
+			&:not(:first-child)
+				margin-left: -8px
+	&-skip
+		padding: 20px 0
+		font: 24px "Poppins-SemiBold"
+		color: #A1A5B7
+		text-align: center
+	&-profile
+		&-inner
+			&.short
+				max-width: 588px
+				margin: auto
+	.test-header
+		padding-top: 24px
+	&-adding
+		&-subtitle
+			margin-top: 8px
+			font: 1em $f_bold
+			span
+				color: rgb($neutral-400)
+			a
+				color: rgb($blue-text)
+		&-section
+			@extend %dfa
+			flex-direction: column
+			.adding-label
+				width: 100%
+				text-align: right
+		&-billing
+			max-width: 494px
+	.subnavigate
+		&-button
+			padding: 5px 8px
+			span
+				font: $fz16 $f_bold
+				color: rgb($neutral-800)
+			&-img
+				@extend %dfa
+				+wh(36px)
+				margin-right: 12px
+				background-color: rgb($neutral-200)
+				justify-content: flex-end
+				flex-direction: column
+				border-radius: 12px
+				overflow: hidden
+				img
+					+wh(100%)
+					max-height: 32px
+					max-width: 28px
+			&.active
+				span
+					color: rgb($blue)
+	&-student
+		&-avatar
+			+wh(80px)
+			flex: 0 0 80px
+			margin-right: 32px
+			padding: 9px 10px 0
+			border-radius: 12px
+			background-color: #EFF2F5
+			img
+				+wh(100%)
+				object-fit: contain
+		&-info
+			width: 100%
+			.unit
+				margin-bottom: 40px
+				transition: .35s ease
+				&:last-child
+					margin-bottom: 0
+			.item
+				@extend %df
+				min-width: 150px
+				max-width: 400px
+				margin-right: 91px
+				flex-direction: column
+				&.last
+					margin-right: 0
+			.buttons
+				flex-direction: row
+				button
+					padding: 12px 20px
+					margin-right: 16px
+					&:last-child
+						margin-right: 0
+			.strong,.text
+				margin-bottom: 4px
+				display: block
+				&:last-child
+					margin-bottom: 0
+			.strong
+				font: $fz18 $f_bold
+				color: rgb($neutral-800)
+				line-height: calc(24 / 18)
+			.text
+				margin-top: auto
+				font-family: $f_bold
+				color: rgb($neutral-400)
+			.button-hide
+				@extend %dfc
+				svg
+					+wh(11px,6px)
+					fill: rgb($neutral-600)
+					transform: rotate(180deg)
+					transition: .35s ease
+				&.active
+					svg
+						transform: rotate(0)
+
+
+.newUsers
+	&-item
+		@extend %dfa
+		&.parents
+			.newUsers-icon
+				background-color: rgb($viol-light)
+				svg
+					fill: rgb($viol)
+		&.students
+			.newUsers-icon
+				background-color: rgb($green-light)
+				svg
+					fill: rgb($green)
+	&-icon
+		@extend %dfc
+		+wh(60px)
+		margin-right: 24px
+		border-radius: 8px
+		svg
+			+wh(32px)
+	&-info
+		@extend %df
+		@extend %fdc
+		strong
+			font-family: $f_bold
+			color: rgb($neutral-900)
+			line-height: calc(40em / 28)
+			font-size: $fz28
+		span
+			font-family: $f_reg
+			color: rgb($neutral-500)
+			line-height: $fz20
+			font-size: 1em
+
+
+.topStudents
+	&-list
+		margin: 30px 0
+	&-item
+		@extend %dfa
+	&-icon
+		+wh(40px)
+		flex: 0 0 40px
+		padding-top: 4px
+		margin-right: 12px
+		border-radius: 12px
+		background-color: rgb($neutral-200)
+		overflow: hidden
+		img
+			+wh(100%)
+			object-fit: contain
+	&-info
+		width: 100%
+		margin-right: 12px
+	&-name
+		margin-bottom: 2px
+		color: rgb($black)
+		font-family: $f_bold
+		font-size: $fz13
+	&-test
+		color: rgb($neutral-400)
+		font-family: $f_bold
+		font-size: $fz12
+	&-points
+		@extend %df
+		@extend %fdc
+		align-items: flex-end
+		flex-shrink: 0
+		strong,span
+			white-space: nowrap
+		strong
+			font-family: $f_bold
+			font-size: $fz20
+			color: $neutral-900
+		span
+			font-family: $f_bold
+			color: rgb($neutral-400)
+			font-size: $fz12
+
+
+.comGraph
+	&-row
+		margin-bottom: 20px
+		&:last-child
+			margin-bottom: 0
+	&-circle
+		&-title
+			font-family: $f_bold
+			letter-spacing: -0.02em
+			color: rgb($neutral-900)
+			font-size: $fz34
+		&-row
+			.stars-circle
+				svg
+					+wh(100px)
+		&-info
+			@extend %df
+			@extend %fdc
+
+	circle
+		r: 42
+		stroke-width: 16px
+		fill: none
+		&.blue
+			stroke: rgb($blue)
+		&.blue-light
+			stroke: rgb($blue-light)
+		&.gold
+			stroke: rgb($gold)
+		&.gold-light
+			stroke: rgb($gold-light)
+		&.turquoise
+			stroke: rgb($turquoise)
+		&.turquoise-light
+			stroke: rgb($turquoise-light)
+
+
+.marker
+	&-info
+		&-row
+			@extend %dfa
+			width: 176px
+			&.turquoise
+				.marker-info-indicator
+					background-color: rgb($turquoise)
+			&.gold
+				.marker-info-indicator
+					background-color: rgb($gold)
+			&.blue
+				.marker-info-indicator
+					background-color: rgb($blue)
+			&.turquoise-light
+				.marker-info-indicator
+					background-color: rgb($turquoise-light)
+			&.gold-light
+				.marker-info-indicator
+					background-color: rgb($gold-light)
+			&.blue-light
+				.marker-info-indicator
+					background-color: rgb($blue-light)
+		&-indicator
+			+wh(12px,8px)
+			border-radius: 4px
+		&-title
+			margin: 0 20px 0 6px
+			font-size: 1em
+			color: rgb($neutral-400)
+			font-family: $f_bold
+		&-value
+				margin-left: auto
+				color: rgb($neutral-700)
+				font-family: $f_bold
+
+	circle
+		r: 42
+		stroke-width: 16px
+		fill: none
+		&.blue
+			stroke: rgb($blue)
+		&.blue-light
+			stroke: rgb($blue-light)
+		&.gold
+			stroke: rgb($gold)
+		&.gold-light
+			stroke: rgb($gold-light)
+		&.turquoise
+			stroke: rgb($turquoise)
+		&.turquoise-light
+			stroke: rgb($turquoise-light)
+
+
+.breadcrumbs
+	font: 14px $f_bold
+	margin: 24px 0
+	&-item,&-delimiter
+		color: rgb($neutral-400)
+		line-height: 20px
+	&-current
+		color: rgb($neutral-800)
+
+
+.plansBlock
+	&-reasons
+		margin-bottom: 20px
+		&-block
+			margin-bottom: 20px
+			&:last-child
+				margin-bottom: 0
+		&-row
+			@extend %df
+			&-colors
+				@extend %df
+				div
+					+wh(39px,12px)
+					margin-right: 1px
+					&:last-child
+						margin-right: 12px
+						border-radius: 0 6px 6px 0
+				.turquoise
+					background-color: rgb($turquoise)
+				.turquoise-light
+					background-color: rgb($turquoise-light)
+				.gold
+					background-color: rgb($gold)
+				.gold-light
+					background-color: rgb($gold-light)
+				.blue
+					background-color: rgb($blue)
+				.blue-light
+					background-color: rgb($blue-light)
+			span
+				font-family: $f_bold
+				color: rgb($neutral-600)
+		&-title
+			font-family: $f_bold
+			color: rgb($neutral-400)
+
+
+.perItemBlock
+	margin-bottom: 20px
+	&:last-child
+		margin-bottom: 0
+	.circle
+		&-count-text
+			width: 100px
+
+	&-course
+		&-item
+			@extend %df
+			align-items: flex-start
+			margin-bottom: 24px
+			&:last-child
+				margin-bottom: 0
+			&-color
+				+wh(24px)
+				margin-right: 12px
+				border-radius: 6px
+				&.turquoise
+					background-color: rgb($turquoise)
+				&.turquoise-light
+					background-color: rgb($turquoise-light)
+				&.gold
+					background-color: rgb($gold)
+				&.gold-light
+					background-color: rgb($gold-light)
+				&.blue
+					background-color: rgb($blue)
+				&.blue-light
+					background-color: rgb($blue-light)
+			&-value
+				font-size: $fz18
+				font-family: $f_reg
+				color: rgb($neutral-900)
+			&-title
+				color: rgb($neutral-600)
+				font-family: $f_bold
+	&-inner
+		@extend %dfa
+		@extend %fdc
+	&-list
+		margin-top: 20px
+
+
+.revenue
+	&-graphic
+		margin-bottom: 20px
+
+
+.avatars
+	width: 90vw
+	padding: 10px
+	&-title
+		margin-bottom: 24px
+	&-list
+		@extend %df
+		column-gap: 10px
+		flex-wrap: wrap
+	&-item
+		width: calc((100% - 30px) / 4)
+		flex: 0 0 calc((100% - 30px) / 4)
+		margin-bottom: 10px
+		button
+			@extend %dfc
+			+wh(100%,80px)
+			border-radius: 12px
+			align-items: flex-end
+			border: 2px solid transparent
+			overflow: hidden
+			background-color: rgb($neutral-200)
+			transition: .35s ease
+			&:hover,&.active
+				border-color: rgb($blue)
+		img
+			+wh(100%,70px)
+			margin-top: auto
+	&-buttons
+		@extend %dfa
+		padding-top: 10px
+		justify-content: flex-end
+		border-top: 1px solid rgb($neutral-200)
+		button
+			margin-left: 16px
+
+
+.success-label
+	@extend %dfa
+	width: 90vw
+	max-width: 588px
+	column-gap: 6px
+	margin: 0 auto
+	padding: 11px 18px
+	border-radius: 4px
+	position: fixed
+	top: 100px
+	left: 0
+	right: 0
+	z-index: 100000
+	&.green
+		background-color: rgb($green-light)
+		border: 1px solid rgb($green-dark)
+		svg
+			fill: rgb($green-dark)
+		span
+			color: rgb($green-dark)
+	&.red
+		background-color: rgb($red-light)
+		border: 1px solid rgb($red-dark)
+		svg
+			fill: rgb($red-dark)
+		span
+			color: rgb($red-dark)
+	&>svg
+		@extend %dfc
+		+wh(16px)
+		flex: 0 0 16px
+	span
+		font: 1em $f_bold
+		line-height: $fz20
+	button
+		@extend %dfc
+		+wh(32px)
+		position: absolute
+		right: 0
+		svg
+			+wh(20px)
+
+
+.courses
+	&-block
+		&-header
+			.item,button
+				width: 100%
+				margin-top: 20px
+		&-crumbs
+			@extend %dfi
+			margin-top: 20px
+			.breadcrumbs
+				margin: 0
+	&-rows
+		&-count
+			@extend %dfc
+			height: 26px
+			padding: 0 9px
+			border-radius: 6px
+			background-color: #F1F5FF
+			font: $fz12 $f_bold
+			color: #366CF9
+			line-height: 18px
+	&-table
+		&-button,&-div
+			@extend %dfa
+		&-button
+			&:hover
+				span
+					color: rgb($blue-text)
+		&-icon
+			margin-right: 10px
+			svg
+				width: 16px
+				height: 14px
+		&-name
+			font: 1em $f_bold
+			white-space: nowrap
+		&-date
+			font: $fz16 $f_reg
+			color: rgb($neutral-600)
+		&-action
+			position: relative
+	&-action
+		&-btn
+			@extend %dfc
+			font-size: $fz12
+			font-family: $f_reg
+			&:not(:last-child)
+				margin-right: 8px
+			span
+				+wh(2.5px)
+				margin-right: 2.5px
+				border-radius: 100%
+				background-color: #7E8299
+				&:last-child
+					margin-right: 0
+			&,span
+				transition: .35s ease
+		&:hover .courses-actions
+			opacity: 1
+			visibility: visible
+			z-index: 1
+	&-actions
+		padding: 9px
+		background: #FFFFFF
+		box-shadow: 0 10px 60px rgba(192,195,200,.2)
+		border-radius: 12px
+		position: absolute
+		right: 0
+		top: 12px
+		opacity: 0
+		visibility: hidden
+		z-index: -1
+		button
+			width: 100%
+			padding: 9px 12px
+			white-space: nowrap
+			text-align: left
+			font-family: $f_bold
+			font-size: $fz12
+			color: #7E8299
+			line-height: 14px
+			transition: .35s ease
+			&.red
+				color: #D9214E
+			&:hover
+				color: rgb($blue-text)
+
+
+.bigPop
+	.test-header
+		border-bottom: none
+	&-title
+		color: rgb($neutral-900)
+	&-subtitle
+		padding: 8px 0 16px
+		font: $fz16 $f_reg
+		color: $neutral-700
+.uploadFile
+	&-dragarea
+		@extend %dfc
+		+wh(100%,30vh)
+		padding: 20px
+		background: #F1FAFF
+		border: 1px dashed #00A3FF
+		border-radius: 6px
+		&-inner
+			@extend %dfa
+		&-icon
+			margin-right: 16px
+			svg
+				+wh(25px,30px)
+		&-info
+			font: $fz16 $f_bold
+			line-height: 22px
+		&-title
+			margin-bottom: 2px
+			color: rgb($neutral-800)
+		&-text
+			color: rgb($neutral-600)
+	&-form
+		label
+			margin: 48px auto 0
+			width: initial
+
+
+.activity
+	&-header
+		&-list
+			@extend %dfi
+			flex-wrap: wrap
+		&-block
+			@extend %dfa
+			margin-bottom: 10px
+		&-icon
+			@extend %dfc
+			+wh(44px)
+			margin-right: 12px
+			border-radius: 8px
+			svg
+				+wh(24px)
+			&.violet
+				background-color: rgb($viol-light)
+				svg
+					fill: rgb($viol)
+			&.blue
+				background-color: rgb($blue-light)
+			&.turquoise
+				background-color: rgb($turquoise-light)
+				svg
+					fill: rgb($turquoise)
+			&.brown
+				background-color: rgb($brown-light)
+				svg
+					fill: rgb($brown)
+		&-title
+			font: $fz18 $f_reg
+			color: rgb($neutral-900)
+		&-text
+			font: 1em $p_reg
+			color: rgb($neutral-500)
+	.details
+		&-header
+			&-item
+				width: 100%
+				margin-bottom: 10px
+				padding: 16px
+				border-radius: 12px
+				&:last-child
+					margin-bottom: 0
+				&-title
+					margin-bottom: 4px
+					font: $fz18 $f_bold
+					color: rgb($neutral-800)
+					line-height: 24px
+				&-desc
+					font-size: $fz12
+					font-family: $f_bold
+					line-height: 18px
+				&.turquoise
+					background-color: rgb($turquoise-light)
+					.details-header-item-desc
+						color: rgb($turquoise)
+				&.blue
+					background-color: rgb($blue-light)
+					.details-header-item-desc
+						color: rgb($blue)
+				&.green
+					background-color: rgb($green-light)
+					.details-header-item-desc
+						color: rgb($green)
+				&.orange
+					background-color: rgb($orange-light)
+					.details-header-item-desc
+						color: rgb($orange)
+				&.red
+					background-color: rgb($red-light)
+					.details-header-item-desc
+						color: rgb($red)
+		&-item
+			margin-top: 32px
+			padding-left: 52px
+			position: relative
+			&:before
+				+af
+				+wh(2px,calc(100% - 8px))
+				position: absolute
+				left: 17px
+				top: 38px
+				border-left: 2px dashed #EFF2F5
+			&:last-child
+				&:before
+					content: none
+			&-icon
+				+wh(36px)
+				padding: 8px
+				border-radius: 18px
+				background-color: #EFF2F5
+				position: absolute
+				left: 0
+				top: 0
+				svg
+					+wh(20px)
+					opacity: .5
+			&-title
+				font: $fz16 $f_bold
+				color: #3F4254
+				strong
+					color: #00A3FF
+			&-text
+				margin-top: 8px
+				font-family: $f_bold
+				color: rgb($neutral-400)
+			&-achieve
+				margin-top: 16px
+				&-title
+					margin-bottom: 8px
+					font-family: $f_bold
+					color: rgb($neutral-400)
+				&-info
+					@extend %dfa
+					margin-bottom: 10px
+					font-size: $fz12
+					font-family: $f_reg
+					&-title
+						color: rgb($neutral-800)
+						line-height: 18px
+				&-subtitle
+					color: rgb($neutral-400)
+					line-height: 18px
+				&.stars
+					.details-item-achieve-icon
+						+wh(36px)
+						border-radius: 12px
+						padding-bottom: 0
+					svg
+						+wh(19px)
+					&.orange
+						.details-item-achieve-icon
+							background-color: rgb($orange-light)
+							svg
+								fill: rgb($orange)
+					&.blue
+						.details-item-achieve-icon
+							background-color: rgb($blue-light)
+							svg
+								fill: rgb($blue)
+				&-icon
+					@extend %dfc
+					+wh(48px)
+					margin-right: 8px
+					position: relative
+					padding-bottom: 16px
+					&.blue
+						background-color: rgb($blue-light)
+						svg
+							fill: rgb($blue)
+						span
+							background-color: rgb($blue)
+					&.red
+						background-color: rgb($red-light)
+						svg
+							fill: rgb($red)
+						span
+							background-color: rgb($red)
+					&.turquoise
+						background-color: rgb($turquoise-light)
+						svg
+							fill: rgb($turquoise)
+						span
+							background-color: rgb($turquoise)
+					&.green
+						background-color: #DFF1EB
+						svg
+							fill: #4AB58E
+						span
+							background-color: #4AB58E
+					&,span
+						border-radius: 4px
+					span
+						+w(100%)
+						text-align: center
+						font-family: $f_reg
+						color: rgb($white)
+						position: absolute
+						bottom: 0
+						left: 0
+					svg
+						+wh(24px)
+
+
+
+.button
+	color: rgb($neutral-600)
+	background-color: rgb($neutral-100)
+	&,&.reverse
+		&:not([disabled]):hover
+			color: rgb($white)
+			background-color: rgb($neutral-800)
+			.button-icon
+				fill: rgb($white)
+	&,&-blue,&-lightblue,&-transparent,&-icon,&-red,&-white-blue
+		@extend %transition
+		white-space: nowrap
+	&,&-blue,&-lightblue,&-transparent,&-red
+		@extend %dfc
+		font-family: $f_bold
+		&[disabled]
+			opacity: .3
+			cursor: initial
+	&,&-blue,&-lightblue,&-red
+		border-radius: 6px
+		border: 1px solid transparent
+	&,&-blue,&-red
+		padding: 13px 12px
+		&[disabled]
+			background-color: rgb($neutral-100)
+			span
+				color: rgba(228, 230, 239, 1)
+	&-lightblue,&-transparent
+		color: rgb($blue-text)
+	&-icon
+		+wh(10px)
+		margin-left: 11px
+		fill: rgb($neutral-600)
+		&.stroke
+			fill: none
+			stroke: rgb($neutral-600)
+		&.hover
+			fill: none
+			stroke: none
+		&.big
+			+wh(16px)
+		&:first-child
+			margin-left: 0
+			margin-right: 11px
+		&:last-child
+			margin-right: 0
+	&.reverse
+		border-color: rgb($neutral-600)
+		background-color: transparent
+	&-blue
+		background-color: rgb($blue)
+		color: rgb($white)
+		.button-icon
+			&:not(.stroke)
+				fill: rgb($white)
+			&.stroke
+				stroke: rgb($white)
+		&.reverse
+			background-color: transparent
+			color: rgb($blue)
+			border-color: rgb($blue)
+			.button-icon
+				fill: rgb($blue)
+		&,&.reverse
+			&:not([disabled]):hover
+				color: rgb($neutral-800)
+				background-color: rgb($blue-light)
+				border-color: transparent
+				.button-icon
+					&:not(.hover)
+						&:not(.stroke)
+							fill: rgb($neutral-800)
+						&.stroke
+							stroke: rgb($neutral-800)
+	&-lightblue
+		padding: 11px 20px
+		background-color: rgb($blue-light)
+		.button-icon
+			+wh(16px)
+			&:not(.hover)
+				fill: rgb($blue)
+				&.stroke
+					fill: none
+					stroke: rgb($blue)
+		&:not([disabled]):hover
+			background-color: rgb($blue)
+			color: rgb($white)
+			.button-icon
+				&:not(.stroke)
+					fill: rgb($white)
+				&.stroke
+					stroke: rgb($white)
+	&-transparent
+		span
+			position: relative
+			&:after
+				+af
+				+wh(0,1px)
+				position: absolute
+				bottom: -2px
+				left: 50%
+				background-color: rgb($blue)
+				transition: .35s ease
+		.button-icon
+			+wh(16px)
+			padding: 3px
+			border: 1px solid rgb($blue)
+			border-radius: 100%
+			fill: rgb($blue)
+		&:hover
+			span
+				&:after
+					width: 100%
+					left: 0
+			.button-icon
+				transform: rotate(90deg)
+	&-white
+		padding: 12px 20px
+		background-color: rgb($white)
+		border-radius: 6px
+		white-space: nowrap
+		font-family: $f_bold
+		color: rgb($neutral-500)
+	&.results
+		width: 100%
+	&-red
+		background-color: rgb($red-dark)
+		color: rgb($white)
+	&-link
+		@extend %dfc
+		color: rgb($blue-text)
+		font: 16px $f_bold
+		line-height: 20px
+		margin: 30px auto 0
+		svg
+			+wh(15px)
+			margin-right: 12.5px
+			fill: rgb($blue-text)
+	&-white-blue
+		@extend %dfc
+		padding: 11px 12px
+		color: rgb($blue)
+		font: $fz16 $f_bold
+		.button-icon
+			fill: rgb($blue)
+		&.wide
+			width: 100%
+	&-green
+		background-color: rgb($green)
+#parent-profile-popup .section-header
+	padding: 0 32px
+#parent-profile-popup .adding-list
+	border-right: none
+.bigPop
+	width: 90vw
+	height: calc(100vh - 48px)
+	max-width: 1200px
+
+
+
+.password
+	width: 90vw
+	max-width: 880px
+	&-inner
+		width: 100%
+		max-width: 496px
+		margin: 32px auto
+	&-title
+		font-family: $f_bold
+		color: rgb($neutral-400)
+	&-desc
+		font: 12px $f_bold
+		color: rgb($neutral-600)
+		display: block
+	&-title,&-desc
+		margin-bottom: 16px
+
+
+.newFolder
+	width: 90vh
+	max-width: 486px
+	&-title
+		font: 20px $f_bold
+
+.addCard
+	width: 90vw!important
+	max-width: 792px
+	.test-header
+		border-bottom: none
+	.adding-inpt
+		margin-bottom: 0
+		margin-top: 32px
+	.notifications-list-item-label
+		width: 100%
+		flex: 0 0 100%
+		justify-content: flex-start
+		flex-direction: row
+	&-inner
+		width: 100%
+		padding-top: 40px
+	&-label
+		font: $fz12 $f_bold
+		color: rgb($neutral-700)
+	&-row
+		@extend %dfa
+		.adding-inpt
+			margin-left: 20px
+			&:first-child
+				margin-left: 0
+		&.jcfe
+			justify-content: flex-end
+	&-checkbox
+		&-text
+			margin-left: 12px
+			font: 1em $f_bold
+			color: rgb($neutral-700)
+	&-footer
+		margin-top: 32px
+		flex-wrap: wrap
+		button
+			width: 100%
+
+
+#congratulationsPopup
+	@extend %dfa
+	width: 90vw
+	max-width: 573px
+	padding: 24px
+	flex-direction: column
+	.title
+		letter-spacing: -.02em
+		font: $fz26 $f_bold
+		text-align: center
+	.text
+		margin: 16px 0 24px
+
+.practice
+	&-title
+		font-family: $f_reg
+	&-schedule
+		&-text
+			margin-bottom: 20px
+			.test-subtitle
+				margin-top: 7px
+		&-rows
+			margin-bottom: 20px
+		&-row
+			@extend %dfa
+			@extend %fw
+			padding: 10px 0
+			.blue-icon
+				margin-right: 20px
+			.line
+				width: 100%
+				height: 2px
+				margin-top: 12px
+				background-color: rgb($neutral-300)
+		&-right
+			width: 100%
+			max-width: 404px
+			margin-left: auto
+		&-title
+			font-size: $fz15
+			font-family: $p_reg
+			&.bold
+				font-family: $f_bold
+			&:last-child
+				margin-left: auto
+		&-date
+			margin-top: 10px
+			&,g-input
+				width: 100%
+			span
+				font-size: $fz15
+				font-family: $f_reg
+	&-desc
+		&-list
+			padding-top: 20px
+		&-item
+			margin-bottom: 13px
+			&-button
+				@extend %df
+				&.active,&:hover
+					.img
+						background-color: rgb($blue)
+						svg
+							fill: rgb($white)
+				.img
+					@extend %dfc
+					@extend %transition
+					+wh(32px)
+					margin-right: 15px
+					border-radius: 100%
+					background-color: rgb($turquoise-light)
+					svg
+						@extend %transition
+						+wh(15px)
+						fill: rgb($turquoise)
+				.desc
+					@extend %df
+					@extend %fdc
+					align-items: flex-start
+					&-title
+						font-family: $f_reg
+						line-height: $fz21
+					&-text
+						font-family: $p_reg
+						font-size: $fz13
+						color: rgb($neutral-400)
+						line-height: $fz19
+	&-block
+		&-title
+			font-family: $f_bold
+			letter-spacing: -.02em
+	&-task
+		&-list
+			padding-top: 10px
+		&-item
+			@extend %dfa
+			flex-wrap: wrap
+			padding: 10px
+			margin-top: 10px
+			border-radius: 8px
+			&:first-child
+				margin-top: 0
+			&-title
+				@extend %dfa
+				width: 100%
+				margin-bottom: 20px
+				font: $fz15 $f_bold
+				text-align: left
+				.icon
+					@extend %dfc
+					+wh(48px)
+					margin-right: 16px
+					border-radius: 12px
+					background-color: rgb($white)
+					svg
+						max-width: 32px
+						max-height: 32px
+				.text
+					@extend %df
+					flex-direction: column
+					span
+						@extend %dfa
+						margin-top: 4px
+						color: rgb($neutral-700)
+						font-size: $fz12
+						line-height: 21px
+					svg
+						+wh(16px)
+						margin-right: 6px
+			&-actions
+				@extend %dfi
+				width: 200px
+				flex: 0 0 200px
+			&-status
+				padding: 6px 12px
+				border-radius: 6px
+				font: $fz12 $f_bold
+			&-button
+				width: 106px
+				padding: 12px 20px
+				border-radius: 9px
+				color: rgb($white)
+				font: $fz15 $f_bold
+	&-table
+		&-head
+			display: none
+			span
+				font: 12px $f_bold
+				text-transform: uppercase
+				color: rgb($neutral-400)
+			.sort
+				@extend %dfa
+				&-buttons
+					@extend %dfa
+					margin-left: 5px
+					flex-direction: column
+					button
+						width: 6px
+						height: 4px
+						position: relative
+						&:after
+							+af
+							+wh(5px)
+							border-top: 1px solid rgb($neutral-400)
+							border-right: 1px solid rgb($neutral-400)
+							position: absolute
+						&:first-child
+							margin-bottom: 2px
+							&:after
+								transform: rotate(-45deg)
+								top: 0
+						&:last-child
+							&:after
+								transform: rotate(135deg)
+								bottom: 0
+		&-row
+			@extend %df
+			padding: 12px 0
+			flex-direction: column
+			border-top: 1px dashed #E4E6EF
+			&:last-child
+				border-bottom: 1px dashed #E4E6EF
+			.icon
+				@extend %dfc
+				+wh(42px)
+				flex: 0 0 42px
+				margin-right: 16px
+				border-radius: 12px
+				background-color: rgb($turquoise-light)
+				svg
+					+wh(32px)
+					fill: rgb($turquoise)
+			&-title,&-subtitle
+				font: 1em $f_bold
+				color: rgb($neutral-800)
+				letter-spacing: -.02em
+				text-align: left
+			.video
+				@extend %dfa
+				padding: 5px
+				svg
+					+wh(32px)
+					margin-right: 13px
+					fill: rgb($blue)
+				span
+					font: 1em $f_reg
+					color: rgb($neutral-800)
+					line-height: 21px
+			.text,.progress
+				text-align: left
+			.text
+				margin-bottom: 10px
+				line-height: 1.66
+				color: rgb($neutral-600)
+				letter-spacing: -.02em
+			.progress
+				@extend %dfi
+				padding-bottom: 10px
+				font: $fz12 $f_bold
+				color: rgb($neutral-400)
+				position: relative
+				&-line
+					width: 100%
+					height: 5px
+					border-radius: 3px
+					background-color: #DCFDFD
+					position: absolute
+					bottom: 0
+					left: 0
+					span
+						height: 100%
+						border-radius: 3px
+						background-color: rgb($turquoise-dark)
+						position: absolute
+						left: 0
+						top: 0
+		&-head,&-row
+			.info
+				@extend %dfa
+				width: 100%
+				margin-bottom: 10px
+			.videoTd
+				width: 161px
+				flex: 0 0 161px
+			.videoTd,&-title,&-subtitle
+				text-align: left
+	&-achievement
+		&-item
+			@extend %df
+			align-items: flex-start
+			flex-direction: column
+			margin-bottom: 20px
+			&:last-child
+				margin-bottom: 0
+		&-title
+			font: $fz18 $f_bold
+			color: #212121
+			line-height: 21px
+	&-reports
+		&-summary
+			@extend %df
+			flex-direction: column
+			&-item
+				margin-bottom: 10px
+				padding: 12px 42px
+				border: 1px solid #E4E6EF
+				border-radius: 6px
+				text-align: left
+				&:last-child
+					margin-bottom: 0
+			&-title
+				margin-bottom: 3px
+				font: $fz24 $f_bold
+				line-height: 1.2
+			&-text
+				font: 1em $f_reg
+		&-table
+			&-item
+				padding: 24px 0 16px
+				border-top: 1px dashed #E4E6EF
+				border-bottom: 1px dashed #E4E6EF
+				.practice-table-row
+					border: none
+			&-title
+				font: $fz15 $f_bold
+				color: rgb($neutral-800)
+				line-height: 1.46
+			&-subtitle
+				font: $fz12 $p_reg
+				color: rgb($neutral-400)
+
+
+#studentProfile
+	overflow: auto
+
+.recent
+	&-title
+		@extend %dfa
+		span
+			font: $fz18 $f_bold
+			color: rgb($neutral-800)
+		&-img
+			@extend %dfc
+			+wh(32px)
+			margin-right: 8px
+			border-radius: 8px
+			background-color: rgb($turquoise-light)
+			svg
+				+wh(32px,17px)
+				fill: rgb($turquoise)
+	&-item
+		margin-bottom: 16px
+		&-row
+			@extend %df
+			justify-content: space-between
+			align-items: flex-start
+		&-title
+			font: 1em $f_bold
+			color: rgb($neutral-800)
+		&-time
+			font: $fz12 $f_bold
+			color: rgb($blue-text)
+		&-text
+			font: 1em $f_reg
+			color: rgb($neutral-400)
+			line-height: calc(20 / 14)
+	.button
+		width: 100%
+
+.usage
+	&-list
+		@extend %dfi
+		flex-wrap: wrap
+	&-item
+		@extend %df
+		width: calc(50% - 12px)
+		flex: 0 0 calc(50% - 12px)
+		margin-top: 24px
+		padding: 16px
+		flex-direction: column
+		border-radius: 12px
+		strong
+			font: $fz25 $f_bold
+			color: rgb($neutral-800)
+			line-height: calc(37.5 / 25)
+		span
+			font: $fz12 $f_bold
+			color: rgb($neutral-500)
+			line-height: 1.5
+
+
+.total
+	&-time
+		@extend %dfc
+		padding: 36px
+		background-color: rgb(137,80,252)
+		border-radius: 12px
+		position: relative
+		&-cont
+			text-align: center
+			position: absolute
+			transform: translateY(10px)
+		&-title
+			font: $fz12 $p_reg
+			color: rgb(238,229,255)
+		&-value
+			font: $fz22 $f_bold
+			color: #fff
+		&-svg
+			height: 102px
+			overflow: hidden
+		svg
+			+wh(203px)
+			transform: rotate(-180deg)
+		circle
+			r: 96
+			fill: none
+			stroke-width: 10px
+			stroke-dashoffset: -5
+			&:nth-child(1)
+				stroke: rgba($white,.2)
+				stroke-dasharray: 290
+			&:nth-child(2)
+				stroke: #fff
+
+
+.mastered
+	padding: 29px 29px 40px
+	background-color: rgb(255,244,222)
+	&-title
+		margin-bottom: 19px
+		font: $fz15 $f_bold
+		color: rgb(255,168,0)
+	&-value
+		margin-bottom: 25px
+		font: $fz25 $f_bold
+	&-progress
+		width: 100%
+		height: 6px
+		background-color: rgba(255,168,0,.2)
+		position: relative
+		&-inner
+			height: 100%
+			background-color: rgb(255,168,0)
+			position: absolute
+			left: 0
+			top: 0
+		&,&-inner
+			border-radius: 5px

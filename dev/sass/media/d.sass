@@ -1,0 +1,812 @@
+%transition-d
+	transition: .35s ease
+.section
+	+w($desk)
+	&.row
+		display: flex
+		justify-content: space-between
+	&-header
+		flex-wrap: nowrap
+		&-gap
+			margin-bottom: 32px
+		.title
+			margin-bottom: 0
+	&-buttons
+		width: initial
+		margin: 0
+		align-items: center
+		flex-wrap: nowrap
+	&-button
+		margin-right: 24px
+		margin-top: 0
+		padding: 8px 0
+		white-space: nowrap
+		&:last-child
+			margin-right: 0
+		&.small
+			font-size: $fz12
+		&.active
+			padding: 8px 16px
+			border-radius: 12px
+			background-color: rgb($neutral-800)
+			color: rgb($white)
+			&:after
+				width: 0
+		&:hover
+			color: rgb($neutral-800)
+		&.active:hover
+			color: rgb($white)
+.block
+	width: 100%
+	&-filter
+		margin-bottom: 32px
+		&-button
+			&:hover
+				color: rgb($neutral-800)
+	&-header
+		flex-wrap: nowrap
+		justify-content: flex-start
+		.button-blue
+			margin-left: auto
+		.block-title
+			width: initial
+			white-space: nowrap
+		&-input,&-select,&-item,.button-blue
+			margin-top: 0
+		&-input,&-select,&-item
+			margin-left: 16px
+		&-item
+			width: initial
+			.block-header
+				&-input,&-select
+					width: 100%
+					margin: 0
+		&-select
+			&[multiple]
+				width: 100%
+		.block
+			&-header
+				.button-blue
+					margin-left: auto
+					width: initial
+				&-select
+					min-width: 150px
+					max-width: 340px
+				&-input
+					width: 240px
+					flex: 0 0 240px
+				&-search
+					width: 240px
+					flex: 0 0 240px
+				&-date
+					width: 200px
+					flex-basis: 200px
+	&-main
+		&-title
+			font-size: $fz34
+			letter-spacing: -.02em
+			line-height: 40px
+		&-subtitle
+			line-height: $fz30
+			letter-spacing: -.02em
+
+.col
+	max-width: 588px
+	margin-left: 24px
+	&.wide
+		max-width: 894px
+	&.narrow
+		max-width: 282px
+		.block
+			padding: 24px 16px
+	&.d384
+		max-width: 384px
+	&.d486
+		max-width: 486px
+	&.d690
+		max-width: 690px
+	&.d792
+		max-width: 792px
+.modal
+	+w(calc($desk - 64px))
+	&-title
+		font-size: $fz26
+	&-text
+		font-size: $fz16
+
+.button
+	&-blue
+		white-space: nowrap
+	&-white
+		border: 1px solid transparent
+		@extend %transition-d
+		&:hover
+			background-color: rgb($neutral-500)
+			color: rgb($white)
+			border-color: rgb($white)
+	&-icon
+		&.large
+			+wh(15px)
+	&-white-blue
+		.button-icon
+			@extend %transition-d
+		&:hover
+			.button-icon
+				transform: rotate(180deg)
+
+
+.filter
+	flex-wrap: nowrap
+	justify-content: flex-start
+
+
+.title
+	margin-bottom: 0
+
+.head
+	&-button
+		border-radius: 4px
+		svg
+			display: block
+		&,svg
+			@extend %transition-d
+		&:hover
+			background-color: rgb($white)
+			svg
+				fill: rgb($blue)
+	&-user
+		@extend %transition-d
+		&:hover
+			background-color: rgb($white)
+			color: rgb($blue)
+	&-select
+		width: initial
+		white-space: nowrap
+
+
+.upcoming
+	&-instructor
+		.info-button
+			position: relative
+			&:after
+				+af
+				+wh(0,1px)
+				background-color: rgb($blue-text)
+				position: absolute
+				left: 50%
+				bottom: 0
+				@extend %transition-d
+			&:hover
+				&:after
+					width: 100%
+					left: 0
+	&-right
+		.action
+			&-button
+				&:not([disabled])
+					&:hover
+						border-color: rgb($blue-text)
+						background-color: rgb($white)
+						color: rgb($blue-text)
+				&[disabled]
+					cursor: initial
+
+
+.hidden
+	&-show
+		border-radius: 4px
+		@extend %transition-d
+		&:hover
+			background-color: rgb($neutral-100)
+
+
+.skill
+	&-level
+		&-item
+			.link
+				span
+					&:after
+						@extend %transition-d
+				&:hover
+					span
+						&:after
+							width: 0
+							left: 50%
+
+.skills
+	&-level
+		&-list
+			.skills-level-item
+				width: calc((100% - 168px) / 4)
+
+.achievements
+	&-list
+		justify-content: space-between
+	&-item
+		&:nth-child(n)
+			margin-right: 0
+
+
+.test
+	&-header
+		&-button
+			span,svg
+				@extend %transition-d
+			&:hover
+				span
+					color: rgb($blue-text)
+				svg
+					fill: rgb($blue-text)
+	&-inner
+		&.visible
+			overflow: visible
+	&-footer
+		&-button,&-back
+			span
+				position: relative
+				&:after
+					@extend %transition-d
+					+af
+					+wh(0,2px)
+					background-color: rgb($blue-text)
+					position: absolute
+					left: 50%
+			&:hover
+				span
+					&:after
+						width: 100%
+						left: 0
+		&-back
+			@extend %transition-d
+			span:after
+				background-color: rgb($neutral-400)
+			&:hover
+				background-color: rgb($neutral-400)
+				color: rgb($white)
+	&-pick
+		&-cont
+			min-height: calc(100vh - 190px)
+		&-item
+			.button
+				&:hover
+					background-color: rgb($white)
+			&.green
+				.button
+					&:hover
+						border: 1px solid rgb($green)
+						color: rgb($green)
+			&.blue
+				.button
+					&:hover
+						border: 1px solid rgb($blue)
+						color: rgb($blue)
+			&.red
+				.button
+					&:hover
+						border: 1px solid rgb($red)
+						color: rgb($red)
+			&.turquoise
+				.button
+					&:hover
+						border: 1px solid rgb($turquoise)
+						color: rgb($turquoise)
+			&.violet
+				.button
+					&:hover
+						border: 1px solid rgb($viol)
+						color: rgb($viol)
+			&.brown
+				.button
+					&:hover
+						border: 1px solid rgb($brown)
+						color: rgb($brown)
+		&-time
+			margin-top: 0
+	&-tabs
+		.test-text
+			font-size: $fz12
+			color: rgb($neutral-400)
+
+
+.questions,.test-block
+	height: calc(100vh - 190px)
+.questions
+	overflow: hidden
+	&-cont
+		height: calc(100% - 150px)
+		margin-top: 24px
+		overflow: auto
+	&-item
+		width: 100px
+	&-button
+		&,svg
+			@extend %transition-d
+		&:hover
+			background-color: transparent
+			color: rgb($blue)
+			svg
+				stroke: rgb($blue)
+	&-variant
+		@extend %transition-d
+		&:hover
+			background-color: rgb($neutral-600)
+			color: rgb($white)
+	&-nav
+		&-btn
+			@extend %transition-d
+			&:hover
+				color: rgb($neutral-800)
+
+
+.grid
+	&-button
+		@extend %transition-d
+		&:hover
+			color: rgb($white)
+			background-color: rgb($neutral-600)
+
+
+.answer
+	&-variant
+		@extend %transition-d
+	&-item
+		&:not(.correct):not(.wrong):not([disabled])
+			.answer-button
+				&:hover
+					.answer
+						&-variant
+							background-color: rgb($blue)
+							color: rgb($white)
+		&.correct,&.wrong,&[disabled]
+			.answer-button
+				cursor: initial
+	&-wrong
+		@extend %transition-d
+		&:hover
+			background-color: rgb($neutral-600)
+			svg
+				transform: scale(1.15)
+				fill: rgb($white)
+	&-value
+		padding: 10px 5px
+		font-size: $fz16
+
+.login
+	.link
+		position: relative
+		&:after
+			@extend %transition-d
+			+af
+			+wh(0,1px)
+			background-color: rgb($blue-text)
+			position: absolute
+			left: 50%
+			bottom: -2px
+		&:hover:after
+			width: 100%
+			left: 0
+	&-bottom
+		.link:after
+			background-color: rgb($neutral-400)
+	.button-lightblue
+		&:hover
+			background-color: rgb($blue-text)
+	&-success
+		&-bgc
+			img
+				&:nth-child(1),&:nth-child(4),&:nth-child(5),&:nth-child(6)
+					left: 50%
+				&:nth-child(1)
+					bottom: 179px
+					transform: translateX(-640px)
+				&:nth-child(2)
+					left: 0
+					bottom: 60px
+				&:nth-child(3)
+					left: 0
+				&:nth-child(4),&:nth-child(5),&:nth-child(6)
+					transform: translateX(-550px)
+				&:nth-child(4)
+					bottom: 117px
+				&:nth-child(5)
+					bottom: 12px
+				&:nth-child(6)
+					bottom: 0
+				&:nth-child(7)
+					right: initial
+					left: 50%
+					transform: translateX(70px)
+				&:nth-child(8)
+					transform: translateX(-150px)
+				&:nth-child(9)
+					right: 0
+
+
+.practice
+	&-schedule
+		&-row
+			padding-bottom: 16px
+			.line
+				margin-top: 16px
+	&-table
+		&-head
+			.videoTd
+				width: 160px
+			.accuracy,.videoTd
+				text-align: left
+		&-row
+			.subtitle
+				line-height: 30px
+			.button
+				margin-right: 64px
+			.video
+				span
+					position: relative
+					&:after
+						@extend %transition-d
+						+af
+						+wh(0,2px)
+						background-color: rgb($neutral-800)
+						position: absolute
+						left: 50%
+						bottom: -2px
+				&:hover
+					span
+						&:after
+							width: 100%
+							left: 0
+		&-row,&-head
+			.questions-count,.time
+				margin-right: 24px
+			.progress,.accuracy
+				flex-basis: 176px
+
+
+.remove-btn
+	svg
+		@extend %transition-d
+	&:hover
+		svg
+			transform: rotate(180deg)
+			fill: rgb($blue)
+
+			
+.profile
+	&-block
+		padding: 0
+		.test
+			&-title
+				padding: 20px 0 0 32px
+			&-footer
+				padding:  20px 32px
+
+
+.admin
+	.section
+		&-button
+			margin-right: 17px
+			&:last-child
+				margin-right: 0
+	.circle
+		&-count
+			&-title
+				font-size: $fz28
+	&-dashboard
+		&-table
+			min-width: 100%
+			&-cont
+				overflow-x: auto
+
+
+.stat
+	&-list
+		overflow-x: auto
+
+.comGraph
+	&-row
+		display: flex
+		align-items: flex-start
+	&-circle
+		margin-right: 80px
+		
+.comGraph
+	&-row
+		display: flex
+		align-items: flex-start
+	&-circle
+		margin-right: 80px
+
+.adding
+	&-list
+		max-height: calc(100vh - 350px)
+		overflow-y: auto
+	&-body
+		height: calc(100vh - 350px)
+		overflow-y: auto
+	&-inner
+		+w(1200px)
+	&-subtitle
+		font-size: $fz18
+	&-avatar
+		margin-top: 32px
+	&-assign
+		&-body
+			+w(589px)
+			margin: 0 auto
+			&.full
+				width: 100%
+				.block-header
+					&-select
+						width: 120px
+						flex-basis: 120px
+	&-center
+		+w(496px)
+		margin: 0 auto
+		&.wide
+			+w(647px)
+	&-section
+		margin-top: 48px
+	&-summary
+		&-item
+			display: flex
+			flex-wrap: wrap
+			align-items: center
+			span
+				width: 100%
+			strong
+				margin-right: 10px
+
+
+.perItemBlock
+	&-list
+		margin-left: 80px
+
+.revenue
+	.perItemBlock-list
+		margin-left: 24px
+
+
+.student
+	&-main
+		padding: 40px calc(50% + 12px) 40px 102px
+		background-size: 510px auto
+		background-position: calc(100% - 102px) 50%
+	&-profile
+		&-row
+			+w(100%)
+			display: flex
+		&-left,&-right
+			+w(50%)
+		&-left
+			padding-right: 48px
+			position: relative
+			&:after
+				+af
+				+wh(1px,calc(100% - 20px))
+				position: absolute
+				top: 15px
+				right: 0
+				background-color: #EBEDF3
+		&-right
+			padding-left: 48px
+		&-remove-popup
+			+w(588px)
+			.button,.button-red
+				padding: 13px 27px
+			.modal-row
+				display: flex
+				justify-content: space-between
+				margin-top: 32px
+				button
+					font-size: $fz16
+
+
+.tbl
+	&-head
+		background-color: rgb($neutral-200)
+		border-radius: 12px
+		th:first-child .tbl-item,&>.tbl-item:first-child
+			padding-left: 24px
+		th:last-child .tbl-item,&>.tbl-item:last-child
+			padding-right: 24px
+	&-item
+		background-color: transparent
+div.tbl-head
+	display: flex
+	justify-content: space-between
+	margin-bottom: 20px
+thead.tbl-head
+	display: none
+.table
+	&-cont
+		overflow-y: scroll
+		padding-right: 12px
+		td
+			&:last-child
+				.tbl-item
+					padding-right: 0
+		&-students
+			max-height: calc(100vh - 500px)
+	&-admin
+		&-title
+			width: 555px
+
+
+.parent
+	&-table
+		&-students
+			&-empty
+				white-space: nowrap
+	&-skip
+		padding: 96px 0
+	&-adding
+		&-body
+			padding-top: 48px
+	&-student
+		&-info
+			.item
+				margin-right: auto
+#parent
+	&-adding
+		&-body
+			height: calc(100vh - 410px)
+			padding: 0 20px 0 30px
+			overflow-y: scroll
+.users
+	&-info
+		&-email,&-name
+			white-space: initial
+
+.avatars
+	padding: 24px
+	&-list
+		column-gap: 24px
+	&-title
+		margin-bottom: 24px
+	&-item
+		width: calc((100% - 144px) / 7)
+		flex: 0 0 calc((100% - 144px) / 7)
+		margin-bottom: 27px
+	&-buttons
+		padding-top: 24px
+		button
+			padding: 14px 20px
+			font: $fz16 $f_bold
+
+
+.success-label
+	top: 240px
+	button
+		@extend %transition-d
+		&:hover
+			transform: rotate(180deg)
+
+
+.courses
+	&-block
+		&-header
+			justify-content: flex-start
+			.item,button
+				height: 34px
+				margin-top: 0
+			button
+				width: initial
+				margin-left: 16px
+			.block-header-search
+				flex: 0 0 320px
+				width: 320px
+				margin-right: auto
+	&-table
+		height: calc(100vh - 488px)
+		&-title
+			width: 613px
+		&-name
+			white-space: initial
+		&-date
+			width: 240px
+		&-action
+			width: 107px
+
+
+.uploadFile
+	&-title
+		font-size: $fz26
+		letter-spacing: -.02em
+	&-dragarea
+		height: 480px
+
+
+.activity
+	&-header
+		&-block
+			width: initial
+			margin-bottom: 0
+	.details
+		&-header
+			&-list
+				flex-wrap: nowrap
+			&-item
+				width: 100%
+				margin-bottom: 0
+				&:nth-child(n)
+					margin-right: 24px
+				&:last-child
+					margin-right: 0
+
+
+.form
+	&-label
+		font-size: $fz15
+
+.bigPop
+	width: 90vw
+
+
+.password
+	width: 880px
+
+
+.notifications
+	&-list
+		&-title
+			&-row
+				padding-top: 28px
+	&-navigate
+		&-list
+			margin-top: 28px
+
+
+.newFolder
+	width: 486px
+	&-title
+		font-size: 26px
+
+
+.parent
+	&-profile
+		&-inner
+			max-height: calc(100vh - 430px)
+			overflow-y: scroll
+
+.schedule
+	&-list
+		display: flex
+		margin: 32px 0
+	&-item
+		margin-right: 31px
+		&:last-child
+			margin-right: 0
+	&-footer
+		&-button
+			&,.text,.arrow,.icon svg
+				@extend %transition-d
+			&:hover
+				background-color: rgb($neutral-800)
+				border: 2px solid rgb($neutral-800)
+				.text
+					color: rgb($white)
+				.arrow
+					border-color: rgb($white)
+				.icon svg
+					fill: rgb($white)
+
+
+.practice
+	&-title
+		font-size: $fz20
+		line-height: 30px
+	&-block
+		&-title
+			line-height: 21px
+		&-subtitle
+			span
+				display: block
+				margin-top: 8px
+	&-task
+		&-item
+			&-actions
+				width: 252px
+				flex-basis: 252px
+
+#studentProfile
+	overflow: hidden

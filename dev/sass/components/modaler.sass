@@ -1,0 +1,60 @@
+:host
+	--var: none
+	--width: 300px
+	--height: 150px
+
+.modaler
+	&-cont
+		+wh(100vw,100%)
+		position: fixed
+		padding-right: 5px
+		top: 0
+		left: 0
+		display: none
+		z-index: 900
+		overflow-y: scroll
+		&.active
+			display: flex
+			justify-content: center
+			flex-direction: column
+			align-items: center
+	&-shadow
+		background-color: #B5B5C3
+	&-inner
+		overflow-y: auto
+		position: relative
+		background-color: #fff
+		border-radius: 12px
+		box-shadow: 0 0 40px rgba(56, 71, 109, 0.29)
+	&-body
+		//padding: 24px 10px 19px
+	&-close
+		+wh(22px)
+		+dfc
+		margin-left: auto
+		cursor: pointer
+		position: absolute
+		right: 10px
+		top: 15px
+		&:before,&:after
+			+wh(3px,15px)
+			+af
+			background-color: #DADADA
+			position: absolute
+		&:before
+			transform: rotate(45deg)
+		&:after
+			transform: rotate(-45deg)
+
++mq(768px)
+	.modaler
+		&-body
+			//padding: 32px 32px 48px
+		&-close
+			top: 26px
+			right: 38px
++mq(1170px)
+	.modaler
+		&-cont
+			align-items: center
+			justify-content: center

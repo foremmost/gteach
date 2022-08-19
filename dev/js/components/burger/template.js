@@ -1,0 +1,1 @@
+export default{burger:(t={})=>`\n\t\t<link rel="stylesheet" href="./components/burger/style.css">\n\t\t<slot name="test">\n\t\t\t<span slot="test">${t.text??""}</span>\n\t\t</slot>\n\t\t<span class="g-burger" data-click="openBurger">\n\t\t\t<span class="g-burger-item"></span>\t\n\t\t</span>\n\t`};

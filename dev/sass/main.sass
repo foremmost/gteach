@@ -1,0 +1,34 @@
+@import "../../../../core/mixins/reset"
+@import "../../../../core/mixins/mixins"
+@import "vars"
+$dpx: 14px
+$font_body: 14px
++font_inc('Google-regular','GoogleSans-Regular.woff2')
++font_inc('Google-bold','GoogleSans-Bold.woff2')
+.set,body
+	+wh(100%)
+body
+	+font($font_body,$f_reg,rgb($main-text))
+	min-height: 100vh
+	overflow-x: hidden
+
+input,button,textarea
+	font-family: inherit
+	font-size: inherit
+	background-color: transparent
+	border: none
+button,label,input[type='submit'],input[type='button']
+	cursor: pointer
+input[type='radio'],input[type='checkbox']
+	display: none
+
+// -==[ Медиа ]==-
+@import "media/m"
++mq(768px)
+	@import "media/t"
++mq(1024px)
+	@import "media/tl"
++mq(1200px)
+	@import "media/d"
++mq(1440px)
+	//@import "media/dl"
